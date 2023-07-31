@@ -55,7 +55,10 @@ export function RecommendationCard({
                             <Token key={tag.name} tag={tag} />
                         ))}
                     </Tags>
-                    <Link className="font-serif-text" to={`#${slug}`}>
+                    <Link
+                        className="font-serif-text hover:underline hover:text-amber-500 dark:hover:text-purple-600"
+                        to={`#${slug}`}
+                    >
                         {createdAt}
                     </Link>
                 </Footer>

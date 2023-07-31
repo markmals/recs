@@ -36,6 +36,10 @@
     background-color: #f9ecdf;
 }
 
+::selection {
+    @apply bg-amber-500 text-white dark:bg-purple-600;
+}
+
 @media (prefers-color-scheme: dark) {
     .noise-container {
         background-color: #17191e;
