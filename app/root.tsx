@@ -7,13 +7,15 @@ export function loader({ request }: LoaderArgs) {
     return json({ url: request.url })
 }
 
+const description = "Mark's Recommendations for TV Shows, Movies, Podcasts, Restaurants, and More"
+
 export const meta: V2_MetaFunction<typeof loader> = ({ data }) => [
     { title: "Recommendations" },
-    // { name: "description", content: description },
+    { name: "description", content: description },
     { property: "og:title", content: "Recommendations" },
     { property: "og:type", content: "website" },
-    // { property: "og:image", content: "mimosas.webp" },
-    // { property: "og:description", content: description },
+    { property: "og:image", content: "/social-media-dark.png" },
+    { property: "og:description", content: description },
     data ? { property: "og:url", content: data!.url } : {},
 ]
 
