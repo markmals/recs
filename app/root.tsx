@@ -1,5 +1,5 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react"
-import type { LinksFunction, LoaderArgs, V2_MetaFunction } from "@vercel/remix"
+import type { HeadersFunction, LinksFunction, LoaderArgs, V2_MetaFunction } from "@vercel/remix"
 import { json } from "@vercel/remix"
 import styles from "./styles/index.css"
 
@@ -22,10 +22,11 @@ export const links: LinksFunction = () => [
     { rel: "stylesheet", href: styles },
 ]
 
-// export const headers: HeadersFunction = () => ({
-//     "Access-Control-Allow-Origin": "*",
-//     "Cross-Origin-Resource-Policy": "cross-origin",
-// })
+export const headers: HeadersFunction = () => ({
+    // "Access-Control-Allow-Origin": "*",
+    // "Cross-Origin-Resource-Policy": "cross-origin",
+    "Cache-Control": "public, max-age=30, s-maxage=86400",
+})
 
 export default function App() {
     return (
