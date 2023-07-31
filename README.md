@@ -5,6 +5,7 @@ A personal recommendations site for things I recommend. Backed by a Notion datab
 ## TODO
 
 - [x] `Cache-Control` headers
+- [x] Refactor component code
 - [ ] Social meta tags (`og:`/`twitter:`)
 - [ ] New favicon with dark mode support
 - [ ] Refactor database code

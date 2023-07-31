@@ -1,6 +1,6 @@
 import { json } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
-import { Card } from "~/components/Card"
+import { RecommendationCard } from "~/components/RecommendationCard"
 import type { Recommendation } from "~/lib/data"
 import notion from "~/lib/notion.server"
 
@@ -86,7 +86,7 @@ export default function Recommendations() {
             <div className="sm:grid-cols-[3fr_2fr] sm:grid block">
                 <div className="flex flex-col items-start gap-7 pb-6">
                     {recs.map(rec => (
-                        <Card key={rec.name} recommendation={rec} />
+                        <RecommendationCard key={rec.name} recommendation={rec} />
                     ))}
                 </div>
                 {/* TODO: Search & filters */}
