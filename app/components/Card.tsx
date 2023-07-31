@@ -35,7 +35,7 @@ export function Card({
                     {/* Title */}
                     <div className="flex flex-col sm:flex-row items-center gap-4 pb-5 sm:pb-0">
                         <a
-                            className="text-sans text-4xl hover:text-[#FB9500] dark:hover:text-indigo-500"
+                            className="text-sans text-4xl hover:text-amber-500 dark:hover:text-purple-600"
                             href={link}
                             rel="noreferrer"
                             target="_blank"
