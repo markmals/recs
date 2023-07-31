@@ -25,7 +25,7 @@ export const links: LinksFunction = () => [
 export const headers: HeadersFunction = () => ({
     // "Access-Control-Allow-Origin": "*",
     // "Cross-Origin-Resource-Policy": "cross-origin",
-    "Cache-Control": "public, max-age=30, s-maxage=86400",
+    "Cache-Control": "public, max-age=30, s-maxage=86400, stale-while-revalidate=86400",
 })
 
 export default function App() {
