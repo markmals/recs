@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.noise {
+    z-index: -20;
+    position: absolute;
+    inset: 0;
+    background-image: url(/noise.webp);
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+.noise-container::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: -50%;
+    bottom: 10%;
+    width: 150%;
+    left: -50%;
+    background:
+        url(/noise.webp) repeat,
+        linear-gradient(83.21deg, #f59f0b 0%, #dc2626 100%);
+    background-blend-mode: color-burn;
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 50%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 50%);
+}
+
+.noise-container {
+    position: relative;
+    isolation: isolate;
+    background-color: #f9ecdf;
+}
+
+@media (prefers-color-scheme: dark) {
+    .noise-container {
+        background-color: #17191e;
+    }
+
+    .noise-container::before {
+        background:
+            url(/noise.webp) repeat,
+            linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+        background-blend-mode: overlay;
+    }
+}
+
+@font-face {
+    font-family: "Roslindale Display";
+    src: url("/fonts/Roslindale-DisplayCondensedBold.woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roslindale Display";
+    src: url("/fonts/Roslindale-DisplayCondensedBoldItalic.woff2");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Roslindale Text";
+    src: url("/fonts/Roslindale-TextBold.woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roslindale Text";
+    src: url("/fonts/Roslindale-TextBoldItalic.woff2");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Roslindale Text";
+    src: url("/fonts/Roslindale-TextItalic.woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Roslindale Text";
+    src: url("/fonts/Roslindale-TextRegular.woff2");
+    font-weight: normal;
+    font-style: normal;
+}

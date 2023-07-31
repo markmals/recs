@@ -1,0 +1,18 @@
+{
+    "root": true,
+    "extends": [
+        "eslint:recommended",
+        "@remix-run/eslint-config",
+        "@remix-run/eslint-config/node",
+        "plugin:react/recommended"
+    ],
+    "overrides": [
+        {
+            "files": ["*"],
+            "rules": {
+                "react/jsx-sort-props": "warn",
+                "react/react-in-jsx-scope": "off"
+            }
+        }
+    ]
+}
