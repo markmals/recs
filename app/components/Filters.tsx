@@ -17,7 +17,7 @@ export function Filters() {
 
     return (
         <Accordion.Root
-            className="mx-20 top-0 sticky h-screen pt-10"
+            className="mx-20 top-0 sticky h-screen pt-10 hidden sm:block"
             collapsible
             defaultValue={filter.stars !== null ? "Stars" : ""}
             type="single"
