@@ -7,9 +7,9 @@ import { useFilter } from "./context/FilterContext"
 import { useSetScrollPosition } from "./context/ScrollContext"
 
 const staticFilters = [
-    { title: "Tags", options: [] },
+    // { title: "Tags", options: [] },
     { title: "Stars", options: [] },
-    { title: "Date", options: [] },
+    // { title: "Date", options: [] },
 ]
 
 export function Filters() {
@@ -40,7 +40,9 @@ export function Filters() {
                         </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Content className="accordion-content padding-animation">
-                        <div className="space-y-6">{f.title === "Stars" && <StarOptions />}</div>
+                        <div className="flex flex-col gap-6">
+                            {f.title === "Stars" && <StarOptions />}
+                        </div>
                     </Accordion.Content>
                 </Accordion.Item>
             ))}
@@ -93,6 +95,18 @@ function StarOptions() {
                         ))}
                 </Link>
             ))}
+            <Link
+                className="font-serif-text text-xl hover:opacity-100 pl-11 opacity-50"
+                onClick={event => {
+                    event.preventDefault()
+                    updateURL({ to: event.currentTarget.href })
+                    setScroll(window.scrollY)
+                    setFilter({ stars: null })
+                }}
+                to="/"
+            >
+                Clear
+            </Link>
         </>
     )
 }
