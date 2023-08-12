@@ -8,15 +8,16 @@
         "typecheck": "tsc"
     },
     "dependencies": {
+        "@formkit/auto-animate": "^0.7.0",
         "@heroicons/react": "^2.0.18",
         "@notionhq/client": "^2.2.9",
+        "@radix-ui/react-accordion": "^1.1.2",
         "@remix-run/node": "^1.19.0",
         "@remix-run/react": "^1.19.0",
         "@vercel/remix": "^1.18.1",
-        "clsx": "^2.0.0",
+        "class-variance-authority": "^0.7.0",
         "isbot": "^3.6.8",
         "react": "^18.2.0",
-        "react-aria-components": "^1.0.0-alpha.5",
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
