@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "astro-build.astro-vscode",
+        "antfu.unocss",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "christian-kohler.npm-intellisense",
+        "wayou.vscode-todo-highlight"
+    ]
+}

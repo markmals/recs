@@ -1,0 +1,15 @@
+{
+    "[astro]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "prettier.documentSelectors": ["**/*.astro"],
+    "eslint.validate": ["astro"],
+
+    "editor.formatOnSave": true,
+    // "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+        // "source.organizeImports": true
+    }
+}

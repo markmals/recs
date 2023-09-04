@@ -1,6 +1,12 @@
 # Recommendations
 
-A personal recommendations site for things I recommend. Backed by a Notion database.
+A personal recommendations site for things I recommend.
+
+## FIXME
+
+-   [ ] Accordion styles/animation
+-   [ ] Accordion state
+-   [ ] ESLint
 
 ## TODO
 

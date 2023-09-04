@@ -1,7 +1,10 @@
-node_modules
+node_modules/
+npm-debug.log*
 
-.cache
 .env
-.vercel
-build
-public/build
+.env.production
+
+dist/
+.astro/
+
+.DS_Store

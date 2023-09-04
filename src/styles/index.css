@@ -1,0 +1,60 @@
+@import "./fonts.css";
+@import "./accordion.css";
+
+.noise-underlay {
+    z-index: -30;
+}
+
+.noise {
+    z-index: -20;
+    position: absolute;
+    inset: 0;
+    background-image: url(/noise.webp);
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+.noise-container::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: -50%;
+    bottom: 10%;
+    width: 150%;
+    left: -50%;
+    background:
+        url(/noise.webp) repeat,
+        linear-gradient(83.21deg, #f59f0b 0%, #dc2626 100%);
+    background-blend-mode: color-burn;
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 50%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 50%);
+}
+
+.noise-container {
+    position: relative;
+    isolation: isolate;
+    background-color: #f9ecdf;
+}
+
+::selection {
+    background-color: theme("colors.amber.500");
+    color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    ::selection {
+        background-color: theme("colors.purple.600");
+    }
+
+    .noise-container {
+        background-color: #17191e;
+    }
+
+    .noise-container::before {
+        background:
+            url(/noise.webp) repeat,
+            linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+        background-blend-mode: overlay;
+    }
+}
