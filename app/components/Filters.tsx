@@ -17,7 +17,7 @@ export function Filters() {
 
     return (
         <Accordion.Root
-            className="mx-20 top-0 sticky h-screen pt-10 hidden sm:block"
+            className="sticky top-0 mx-20 hidden h-screen pt-10 sm:block"
             collapsible
             defaultValue={filter.stars !== null ? "Stars" : ""}
             type="single"
@@ -30,11 +30,11 @@ export function Filters() {
                 >
                     {/* as="h3" */}
                     <Accordion.Header className="-mx-2 -my-3 flow-root">
-                        <Accordion.Trigger className="flex w-full items-center gap-6 px-2 py-3 text-black/50 dark:text-white/50 accordion-trigger">
-                            <span className="flex items-center accordion-icon">
+                        <Accordion.Trigger className="accordion-trigger flex w-full items-center gap-6 px-2 py-3 text-black/50 dark:text-white/50">
+                            <span className="accordion-icon flex items-center">
                                 <ChevronRightIcon aria-hidden="true" className="h-5 w-5" />
                             </span>
-                            <span className="font-medium font-serif-text text-xl text-gray-900 dark:text-gray-50">
+                            <span className="font-serif-text text-xl font-medium text-gray-900 dark:text-gray-50">
                                 {f.title}
                             </span>
                         </Accordion.Trigger>
@@ -60,7 +60,7 @@ function StarOptions() {
         <>
             <Link
                 className={cx(
-                    "font-serif-text text-xl hover:opacity-100 pl-11",
+                    "pl-11 font-serif-text text-xl hover:opacity-100",
                     filter.stars === 0 ? "opacity-100" : "opacity-50",
                 )}
                 onClick={event => {
@@ -76,7 +76,7 @@ function StarOptions() {
             {stars.map(num => (
                 <Link
                     className={cx(
-                        "flex items-center gap-2 hover:opacity-100 pl-11",
+                        "flex items-center gap-2 pl-11 hover:opacity-100",
                         filter.stars === num ? "opacity-100" : "opacity-50",
                     )}
                     key={`star-wrapper-${num}`}
@@ -96,7 +96,7 @@ function StarOptions() {
                 </Link>
             ))}
             <Link
-                className="font-serif-text text-xl hover:opacity-100 pl-11 opacity-50"
+                className="pl-11 font-serif-text text-xl opacity-50 hover:opacity-100"
                 onClick={event => {
                     event.preventDefault()
                     updateURL({ to: event.currentTarget.href })

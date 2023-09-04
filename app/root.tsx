@@ -33,7 +33,7 @@ export const headers: HeadersFunction = () => ({
 export default function App() {
     return (
         <html
-            className="h-full w-full bg-[#f9ecdf] dark:bg-[#17191e] text-black dark:text-white"
+            className="h-full w-full bg-[#f9ecdf] text-black dark:bg-[#17191e] dark:text-white"
             lang="en"
         >
             <head>

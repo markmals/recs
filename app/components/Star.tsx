@@ -1,6 +1,6 @@
 import { cx } from "class-variance-authority"
 
-export function Star({ className, filled = true }: { className?: string; filled: boolean }) {
+export function Star({ className, filled = true }: { className?: string; filled?: boolean }) {
     if (!filled) {
         return (
             <svg

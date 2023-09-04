@@ -4,16 +4,24 @@
         "eslint:recommended",
         "@remix-run/eslint-config",
         "@remix-run/eslint-config/node",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:tailwindcss/recommended"
     ],
+    "ignorePatterns": ["**/*.css"],
     "overrides": [
         {
-            "files": ["*"],
+            "files": ["./app/**/*.ts", "./app/**/*.tsx"],
             "rules": {
                 "react/jsx-sort-props": "warn",
                 "react/react-in-jsx-scope": "off",
                 "@typescript-eslint/no-unused-vars": "warn"
             }
         }
-    ]
+    ],
+    "settings": {
+        "tailwindcss": {
+            // Why do I need to whitelist "text-sans"? It should be detected as a Tailwind class
+            "whitelist": ["text-sans", "padding-animation"]
+        }
+    }
 }

@@ -24,7 +24,7 @@ export function RecommendationCard({
             {image && (
                 <img
                     alt=""
-                    className="object-cover aspect-[5/4] sm:aspect-[2/3] max-h-64 border-2 border-black shadow-hard"
+                    className="aspect-[5/4] max-h-64 border-2 border-black object-cover shadow-hard sm:aspect-[2/3]"
                     src={image}
                 />
             )}
@@ -41,7 +41,7 @@ export function RecommendationCard({
                         </a>
 
                         {starElements && (
-                            <div className="flex items-center content-center gap-3">
+                            <div className="flex content-center items-center gap-3">
                                 {starElements}
                             </div>
                         )}
@@ -56,7 +56,7 @@ export function RecommendationCard({
                         ))}
                     </Tags>
                     <Link
-                        className="font-serif-text hover:underline hover:text-amber-500 dark:hover:text-purple-600"
+                        className="font-serif-text hover:text-amber-500 hover:underline dark:hover:text-purple-600"
                         to={`#${slug}`}
                     >
                         {createdAt}
@@ -69,7 +69,7 @@ export function RecommendationCard({
 
 function Footer({ children }: PropsWithChildren) {
     return (
-        <div className="flex flex-wrap gap-4 justify-between items-center w-full pr-4">
+        <div className="flex w-full flex-wrap items-center justify-between gap-4 pr-4">
             {children}
         </div>
     )
@@ -77,7 +77,7 @@ function Footer({ children }: PropsWithChildren) {
 
 function Title({ children }: PropsWithChildren) {
     return (
-        <div className="flex flex-col sm:flex-row items-center gap-4 pb-5 sm:pb-0">{children}</div>
+        <div className="flex flex-col items-center gap-4 pb-5 sm:flex-row sm:pb-0">{children}</div>
     )
 }
 
@@ -87,7 +87,7 @@ function Tags({ children }: PropsWithChildren) {
 
 function TextContent({ children }: PropsWithChildren) {
     return (
-        <div className="flex flex-col items-center sm:items-start w-full gap-3 pb-8">
+        <div className="flex w-full flex-col items-center gap-3 pb-8 sm:items-start">
             {children}
         </div>
     )
@@ -95,7 +95,7 @@ function TextContent({ children }: PropsWithChildren) {
 
 function Content({ children }: PropsWithChildren) {
     return (
-        <div className="flex flex-col justify-between items-center w-full min-h-[264px]">
+        <div className="flex min-h-[264px] w-full flex-col items-center justify-between">
             {children}
         </div>
     )
@@ -104,7 +104,7 @@ function Content({ children }: PropsWithChildren) {
 function Card({ id, children }: PropsWithChildren<{ id: string }>) {
     return (
         <div
-            className="bg-[#FDFAF7] dark:bg-[#232326] p-6 border-black border-2 flex flex-col sm:flex-row gap-5 items-center justify-center min-h-[264px] rounded-xl w-full shadow-hard-lg"
+            className="flex min-h-[264px] w-full flex-col items-center justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 shadow-hard-lg dark:bg-[#232326] sm:flex-row"
             id={id}
         >
             {children}

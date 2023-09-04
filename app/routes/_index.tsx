@@ -53,9 +53,9 @@ export async function loader({ request }: LoaderArgs) {
                     ? "Download"
                     : "Link"
 
-            let d = res.properties["Distributor"].select ?? undefined
-            if (type === "Album" || type === "Video Game") d = undefined
-            let distributor = d ? [{ name: d.name }] : []
+            // let d = res.properties["Distributor"].select ?? undefined
+            // if (type === "Album" || type === "Video Game") d = undefined
+            // let distributor = d ? [{ name: d.name }] : []
 
             return {
                 image: res.properties["Image"].url ?? undefined,
@@ -101,7 +101,7 @@ export default function Recommendations() {
     let [parentAnimation] = useAutoAnimate()
 
     // This should only rerun when `recs` updates, not `scroll`
-    // Despite what ESLint says
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
     useEffect(() => window.scrollTo(0, scroll), [recs])
 
     useEffect(() => {
@@ -128,8 +128,8 @@ export default function Recommendations() {
         <div className="noise-container p-6">
             <div className="noise" />
             <div style={{ zIndex: "-30" }} />
-            <h1 className="font-serif-display font-bold text-5xl sm:text-6xl">Recommendations</h1>
-            <div className="sm:grid-cols-[3fr_2fr] sm:grid block">
+            <h1 className="font-serif-display text-5xl font-bold sm:text-6xl">Recommendations</h1>
+            <div className="block sm:grid sm:grid-cols-[3fr_2fr]">
                 <div className="flex flex-col items-start gap-7 py-10" ref={parentAnimation}>
                     {recs.map(rec => (
                         <RecommendationCard key={rec.name} recommendation={rec} />
