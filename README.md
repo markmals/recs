@@ -2,12 +2,6 @@
 
 A personal recommendations site for things I recommend.
 
-## FIXME
-
--   [ ] Accordion styles/animation
--   [ ] Accordion state
--   [ ] ESLint
-
 ## TODO
 
 -   [x] `Cache-Control` headers
@@ -21,9 +15,8 @@ A personal recommendations site for things I recommend.
     -   [ ] Search by keyword
     -   [ ] Filter by date range
 -   [ ] Click on a tag to filter by that tag
--   [ ] Click on star rating to filter by that rating
--   [ ] Show how many stars in total
+-   [x] Click on star rating to filter by that rating
 -   [ ] Add icons to link tags
--   [ ] New favicon with dark mode support
--   [ ] Refactor database code
--   [ ] Refactor database tag structure
+-   [ ] Higher-fidelity favicon with dark mode support
+-   [x] Refactor database code
+-   [x] Refactor database tag structure
