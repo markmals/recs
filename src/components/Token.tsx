@@ -1,4 +1,5 @@
 import { cva } from "cva"
+import { ReactNode } from "react"
 import { Link } from "react-router-dom"
 import type { Tag } from "~/lib/data"
 import type { ClassProps } from "~/lib/props"
@@ -47,18 +48,24 @@ export function Token({ tag, className = undefined, target = "_blank" }: Token.P
 }
 
 export namespace TokenButton {
-    export interface Props extends ClassProps {
-        label: string
-        "aria-label": string
-        name?: string
-        value?: string
-    }
+    export type Props = ClassProps &
+        (
+            | { label: string; "aria-label": string; children?: undefined }
+            | { children: ReactNode[] | ReactNode; label?: undefined }
+        ) & {
+            "aria-label"?: string
+            name?: string
+            value?: string
+            onClick?: () => void
+            type?: "button" | "submit" | "reset"
+        }
 }
 
-export function TokenButton({ label, ...props }: TokenButton.Props) {
+export function TokenButton(props: TokenButton.Props) {
+    let children = props.label || props.children
     return (
         <button className={token({ type: "button" })} {...props}>
-            {label}
+            {children}
             {/* {icon} */}
         </button>
     )
