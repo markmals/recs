@@ -45,3 +45,21 @@ export function Token({ tag, className = undefined, target = "_blank" }: Token.P
         </span>
     )
 }
+
+export namespace TokenButton {
+    export interface Props extends ClassProps {
+        label: string
+        "aria-label": string
+        name?: string
+        value?: string
+    }
+}
+
+export function TokenButton({ label, ...props }: TokenButton.Props) {
+    return (
+        <button className={token({ type: "button" })} {...props}>
+            {label}
+            {/* {icon} */}
+        </button>
+    )
+}
