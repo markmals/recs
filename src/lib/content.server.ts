@@ -1,4 +1,5 @@
 import frontmatter from "front-matter"
+import { marked } from "marked"
 import { parse as parsePath } from "path-esm"
 import type { Output } from "valibot"
 import { parse as validate } from "valibot"
@@ -33,12 +34,11 @@ export async function getCollection<Collection extends CollectionKey>(
                 return contentDir === collection
             })
             .map(async ([path, file]) => {
-                const { attributes, body } = frontmatter(file)
+                const { attributes, body: content } = frontmatter(file)
+                let body = marked(content)
                 let data = validate(collections[collection], attributes)
                 data.createdOn = new Date(data.createdOn)
                 return { slug: parsePath(path).name, body, data, collection }
             }),
     )
 }
-
-export * as v from "valibot"

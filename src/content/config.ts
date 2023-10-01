@@ -1,10 +1,9 @@
-// import { v } from "~/lib/content.server"
 import * as v from "valibot"
 
 const recommendationsCollection = v.object({
     title: v.string(),
     link: v.string(),
-    image: v.string([v.url()]),
+    image: v.string(),
     stars: v.number(),
     tags: v.array(
         v.object({

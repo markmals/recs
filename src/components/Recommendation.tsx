@@ -41,12 +41,12 @@ export function Recommendation({ recommendation }: Recommendation.Props) {
             {!!image && (
                 <img
                     alt=""
-                    className="aspect-[5/4] max-h-64 border-2 border-black object-cover shadow-hard sm:aspect-[2/3]"
+                    className="aspect-[5/4] max-h-80 border-2 border-black object-cover shadow-hard sm:aspect-[2/3]"
                     src={image}
                 />
             )}
 
-            <div className="flex min-h-[264px] w-full flex-col items-center justify-between">
+            <div className="flex h-full w-full flex-col items-center justify-between">
                 <div className="flex w-full flex-col items-center gap-3 pb-8 sm:items-start">
                     <div className="flex flex-col items-center gap-4 pb-5 sm:flex-row sm:pb-0">
                         <a
@@ -69,7 +69,10 @@ export function Recommendation({ recommendation }: Recommendation.Props) {
                         )}
                     </div>
 
-                    <span className="font-serif-text">{description}</span>
+                    <span
+                        className="font-serif-text"
+                        dangerouslySetInnerHTML={{ __html: description }}
+                    ></span>
                 </div>
 
                 <div className="flex w-full flex-wrap items-center justify-between gap-4 pr-4">
