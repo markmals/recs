@@ -8,10 +8,6 @@ import { Filters } from "~/components/filters/Filters"
 import { getCollection } from "~/lib/content.server"
 import { TokenButton } from "../components/Token"
 
-// export const headers: HeadersFunction = () => ({
-//     "Cache-Control": "public, max-age=30, s-maxage=86400, stale-while-revalidate=86400",
-// })
-
 export async function loader({ request }: LoaderFunctionArgs) {
     let query = new URL(request.url).searchParams
     let starsQuery = new URLSearchParams(query).get("stars")
@@ -65,9 +61,11 @@ export function ErrorBoundary() {
 
     return (
         <div className="flex h-screen flex-col justify-center px-4 py-6 text-center sm:px-64 sm:py-8">
-            <ExclamationTriangleIcon className="mx-auto h-12 w-12 text-amber-500" />
-            <h3 className="mt-2 font-sans text-4xl font-semibold text-amber-950">Error!</h3>
-            <p className="mt-1 font-serif-text text-amber-950">
+            <ExclamationTriangleIcon className="mx-auto h-12 w-12 text-amber-500 dark:text-purple-500" />
+            <h3 className="mt-2 font-sans text-4xl font-semibold text-amber-950 dark:text-purple-200">
+                Error!
+            </h3>
+            <p className="mt-1 font-serif-text text-amber-950 dark:text-purple-200">
                 <i>{message}</i>
             </p>
             <div className="mt-6">
