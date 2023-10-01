@@ -1,7 +1,7 @@
 ---
 title: The Bear, Season 2
 link: https://www.themoviedb.org/tv/136315-the-bear
-image: https://www.themoviedb.org/t/p/w1280/3MVHF64rlvH1eofKefIoazXwOK0.jpg
+image: https://www.themoviedb.org/t/p/original/aGChYeAQ4MuJORQFDlngWhl9sC6.jpg
 stars: 2
 tags:
     - name: TV Show
