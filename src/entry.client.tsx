@@ -1,24 +1,29 @@
 import { createAssets } from "@vinxi/react"
+import { StrictMode, Suspense } from "react"
 import { hydrateRoot } from "react-dom/client"
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import "vinxi/client"
 import { routes } from "./app"
 import { AssetsContext } from "./root"
 
-hydrate()
+const Assets = createAssets(
+    import.meta.env.MANIFEST["client"].handler,
+    import.meta.env.MANIFEST["client"],
+)
 
-async function hydrate() {
-    const Assets = createAssets(
-        import.meta.env.MANIFEST["client"].handler,
-        import.meta.env.MANIFEST["client"],
-    )
+let router = createBrowserRouter(routes)
 
-    let router = createBrowserRouter(routes)
-
-    hydrateRoot(
-        document,
-        <AssetsContext.Provider value={<Assets />}>
-            <RouterProvider fallbackElement={null} router={router} />
-        </AssetsContext.Provider>,
-    )
-}
+hydrateRoot(
+    document,
+    <StrictMode>
+        <AssetsContext.Provider
+            value={
+                <Suspense>
+                    <Assets />
+                </Suspense>
+            }
+        >
+            <RouterProvider router={router} />
+        </AssetsContext.Provider>
+    </StrictMode>,
+)

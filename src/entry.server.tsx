@@ -32,10 +32,8 @@ export default eventHandler(async event => {
 
     return renderToPipeableStream(
         <StrictMode>
-            <AssetsContext.Provider
-                value={<Suspense fallback={null}>{assets.map(m => renderAsset(m))}</Suspense>}
-            >
-                <StaticRouterProvider context={context} nonce="the-nonce" router={router} />
+            <AssetsContext.Provider value={<Suspense>{assets.map(m => renderAsset(m))}</Suspense>}>
+                <StaticRouterProvider context={context} router={router} />
             </AssetsContext.Provider>
         </StrictMode>,
         {
