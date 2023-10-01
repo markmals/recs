@@ -1,21 +1,19 @@
-import { defineCollection, z } from "astro:content"
+// import { v } from "~/lib/content.server"
+import * as v from "valibot"
 
-const recommendationsCollection = defineCollection({
-    type: "content",
-    schema: z.object({
-        title: z.string(),
-        link: z.string(),
-        image: z.string().url(),
-        stars: z.number(),
-        tags: z.array(
-            z.object({
-                name: z.string(),
-                link: z.string().url().optional(),
-                // icon?: JSX.Element
-            }),
-        ),
-        createdOn: z.date(),
-    }),
+const recommendationsCollection = v.object({
+    title: v.string(),
+    link: v.string(),
+    image: v.string([v.url()]),
+    stars: v.number(),
+    tags: v.array(
+        v.object({
+            name: v.string(),
+            link: v.optional(v.string([v.url()])),
+            // icon?: JSX.Element
+        }),
+    ),
+    createdOn: v.date(),
 })
 
 export const collections = {

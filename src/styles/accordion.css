@@ -3,12 +3,12 @@
         height: 0;
     }
     to {
-        height: var(--kb-accordion-content-height);
+        height: var(--radix-accordion-content-height);
     }
 }
 @keyframes slideUp {
     from {
-        height: var(--kb-accordion-content-height);
+        height: var(--radix-accordion-content-height);
     }
     to {
         height: 0;
@@ -40,15 +40,14 @@
     opacity: 0;
 }
 
-.accordion-content[data-expanded] {
+.accordion-content[data-state="open"] {
     animation:
         slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1),
         fadeIn 300ms cubic-bezier(0.87, 0, 0.13, 1);
     opacity: 1;
 }
 
-/* FIXME: Make this more generic and less implementation dependant (astro-slot) */
-.accordion-content astro-slot > :first-child {
+.accordion-content > :first-child {
     padding-top: 1.5rem;
 }
 
@@ -56,6 +55,6 @@
     transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
 }
 
-.accordion-trigger[data-expanded] .accordion-icon {
+.accordion-trigger[data-state="open"] > .accordion-icon {
     transform: rotate(90deg);
 }

@@ -12,5 +12,5 @@ export interface Recommendation {
 export interface Tag {
     name: string
     link?: string
-    // icon?: AstroVNode
+    // icon?: ReactNode
 }

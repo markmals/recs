@@ -1,10 +1,10 @@
-node_modules/
-npm-debug.log*
+node_modules
 
+.cache
 .env
-.env.production
-
-dist/
-.astro/
-
+.vercel
+build
+public/build
+.output
+.nitro
 .DS_Store

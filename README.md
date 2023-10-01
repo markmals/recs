@@ -4,8 +4,7 @@ A personal recommendations site for things I recommend.
 
 ## TODO
 
--   [x] `Cache-Control` headers
--   [x] Refactor component code
+-   [ ] `Cache-Control` headers
 -   [x] Social meta tags (`og:`/`twitter:`)
 -   [x] Add selection and hover styles
 -   [ ] Search & filter

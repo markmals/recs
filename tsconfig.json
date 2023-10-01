@@ -1,8 +1,19 @@
 {
-    "extends": "astro/tsconfigs/strict",
     "compilerOptions": {
-        "jsx": "preserve",
-        "jsxImportSource": "solid-js",
-        "strictNullChecks": true
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "checkJs": true,
+        "noEmit": true,
+        // "types": ["vinxi/client"],
+        "isolatedModules": true,
+        "baseUrl": ".",
+        "paths": {
+            "~/*": ["./src/*"]
+        }
     }
 }

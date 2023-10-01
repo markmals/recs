@@ -1,18 +1,9 @@
-# build output
-dist/
+node_modules
 
-# generated types
-.astro/
-
-# dependencies
-node_modules/
-
-# logs
-npm-debug.log*
-
-# environment variables
+/.cache
+/build
+/public/build
 .env
-.env.production
-
-# macOS-specific files
+.output
+.nitro
 .DS_Store

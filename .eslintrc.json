@@ -2,39 +2,19 @@
     "root": true,
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:astro/recommended",
-        "@unocss"
+        "@remix-run/eslint-config",
+        "@remix-run/eslint-config/node",
+        "plugin:react/recommended",
+        "plugin:tailwindcss/recommended"
     ],
-    "plugins": ["react", "solid"],
     "rules": {
+        "react/react-in-jsx-scope": "off",
         "react/jsx-sort-props": "warn",
-        "@typescript-eslint/triple-slash-reference": "off"
-    },
-    "ignorePatterns": ["**/*.css", "**/*.md"],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-    "overrides": [
-        {
-            "files": ["*.astro"],
-            "parser": "astro-eslint-parser",
-            "parserOptions": {
-                "parser": "@typescript-eslint/parser",
-                "extraFileExtensions": [".astro"]
-            }
-        },
-        {
-            "files": ["*.tsx"],
-            "extends": ["plugin:solid/typescript"]
-        }
-    ],
-    "settings": {
-        "react": {
-            "version": "18.0.0"
-        }
+        "@typescript-eslint/triple-slash-reference": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
+        // I want to be able to use CSS when I need to
+        "tailwindcss/no-custom-classname": "off",
+        // prettier-plugin-tailwindcss will take care of this for me
+        "tailwindcss/classnames-order": "off"
     }
 }

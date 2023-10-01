@@ -1,9 +1,6 @@
+@import "./tailwind.css";
 @import "./fonts.css";
 @import "./accordion.css";
-
-.noise-underlay {
-    z-index: -30;
-}
 
 .noise {
     z-index: -20;
@@ -39,14 +36,10 @@
 
 ::selection {
     background-color: theme("colors.amber.500");
-    color: white;
+    color: theme("colors.white");
 }
 
 @media (prefers-color-scheme: dark) {
-    ::selection {
-        background-color: theme("colors.purple.600");
-    }
-
     .noise-container {
         background-color: #17191e;
     }
@@ -56,5 +49,9 @@
             url(/noise.webp) repeat,
             linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
         background-blend-mode: overlay;
+    }
+
+    ::selection {
+        background-color: theme("colors.purple.600");
     }
 }
