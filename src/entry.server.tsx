@@ -13,7 +13,6 @@ import { AssetsContext } from "./root"
 export default eventHandler(async event => {
     const clientManifest = import.meta.env.MANIFEST["client"]
     const assets = await clientManifest.inputs[clientManifest.handler].assets()
-    const events = {}
 
     let request = toWebRequest(event) as Request
     let { query, dataRoutes } = createStaticHandler(routes)
@@ -25,7 +24,13 @@ export default eventHandler(async event => {
 
     let router = createStaticRouter(dataRoutes, context)
 
-    const stream = renderToPipeableStream(
+    event.node.res.setHeader("Content-Type", "text/html")
+    event.node.res.setHeader(
+        "Cache-Control",
+        "public, max-age=30, s-maxage=86400, stale-while-revalidate=86400",
+    )
+
+    return renderToPipeableStream(
         <StrictMode>
             <AssetsContext.Provider
                 value={<Suspense fallback={null}>{assets.map(m => renderAsset(m))}</Suspense>}
@@ -40,18 +45,4 @@ export default eventHandler(async event => {
             )};`,
         },
     )
-
-    // @ts-ignore
-    stream._read = () => {}
-    // @ts-ignore
-    stream.on = (event, listener) => {
-        events[event] = listener
-    }
-
-    event.node.res.setHeader("Content-Type", "text/html")
-    event.node.res.setHeader(
-        "Cache-Control",
-        "public, max-age=30, s-maxage=86400, stale-while-revalidate=86400",
-    )
-    return stream
 })
