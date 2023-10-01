@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { useMemo } from "react"
-import { Link, useLoaderData } from "react-router-dom"
+import { Form, Link, useLoaderData } from "react-router-dom"
 import type { Recommendation as IRecommendation } from "~/lib/data"
 import type { loader } from "~/routes/_index"
 import { Star } from "./Star"
@@ -58,14 +58,22 @@ export function Recommendation({ recommendation }: Recommendation.Props) {
                             {title}
                         </a>
                         {showStars && (
-                            <Link
-                                className="group flex content-center items-center gap-3"
-                                to={starsQuery !== null ? "/" : `/?stars=${stars}`}
-                            >
-                                {starArray.map((_, index) => (
-                                    <Star hover={true} key={index} />
-                                ))}
-                            </Link>
+                            <Form>
+                                <button
+                                    className="group flex content-center items-center gap-3"
+                                    aria-label={
+                                        starsQuery !== null
+                                            ? "Clear stars filter and show all reccomendations"
+                                            : `Show ${stars} star recommendations`
+                                    }
+                                    name={starsQuery !== null ? null : "stars"}
+                                    value={starsQuery !== null ? null : stars}
+                                >
+                                    {starArray.map((_, index) => (
+                                        <Star hover={true} key={index} />
+                                    ))}
+                                </button>
+                            </Form>
                         )}
                     </div>
 

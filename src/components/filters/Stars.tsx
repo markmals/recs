@@ -48,7 +48,7 @@ export function Options() {
                     key={num}
                     name="stars"
                     value={num}
-                    aria-label={`Show recommendations with ${num} stars`}
+                    aria-label={`Show ${num} star recommendations`}
                 >
                     {Array(num)
                         .fill(num)
@@ -58,7 +58,10 @@ export function Options() {
                 </button>
             ))}
             <div className="pl-11">
-                <TokenButton label="Clear" aria-label="Clear stars filter" />
+                <TokenButton
+                    label="Clear"
+                    aria-label="Clear stars filter and show all reccomendations"
+                />
             </div>
         </div>
     )
