@@ -28,19 +28,20 @@ export function Options() {
     return (
         <div className="flex flex-col gap-6">
             <button
+                aria-label={`Show recommendations with no stars`}
                 className={cx([
                     "pl-11 text-left font-serif-text text-xl hover:opacity-100",
                     stars === 0 ? "opacity-100" : "opacity-50",
                 ])}
                 name="stars"
                 value="0"
-                aria-label={`Show recommendations with no stars`}
             >
                 No Stars
             </button>
 
             {starRange.map(num => (
                 <button
+                    aria-label={`Show ${num} star recommendations`}
                     className={cx([
                         "flex items-center gap-2 pl-11 hover:opacity-100",
                         stars === num ? "opacity-100" : "opacity-50",
@@ -48,7 +49,6 @@ export function Options() {
                     key={num}
                     name="stars"
                     value={num}
-                    aria-label={`Show ${num} star recommendations`}
                 >
                     {Array(num)
                         .fill(num)
@@ -59,8 +59,8 @@ export function Options() {
             ))}
             <div className="pl-11">
                 <TokenButton
-                    label="Clear"
                     aria-label="Clear stars filter and show all reccomendations"
+                    label="Clear"
                 />
             </div>
         </div>
@@ -70,9 +70,9 @@ export function Options() {
 export function Filter() {
     return (
         <Accordion.Item
+            asChild
             className="border-t-2 border-black px-4 py-6 dark:border-white/50"
             value="stars"
-            asChild
         >
             <Form>
                 <Accordion.Header className="-mx-2 -my-3 flow-root">

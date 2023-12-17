@@ -34,7 +34,7 @@ export function Recommendation({ recommendation }: Recommendation.Props) {
 
     return (
         <motion.div
-            className="flex min-h-[264px] w-full flex-col items-center justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 shadow-hard-lg dark:bg-[#232326] sm:flex-row"
+            className="flex min-h-[264px] w-full flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 shadow-hard-lg dark:bg-[#232326] sm:flex-row"
             id={slug}
             layout
         >
@@ -60,12 +60,12 @@ export function Recommendation({ recommendation }: Recommendation.Props) {
                         {showStars && (
                             <Form>
                                 <button
-                                    className="group flex content-center items-center gap-3"
                                     aria-label={
                                         starsQuery !== null
                                             ? "Clear stars filter and show all reccomendations"
                                             : `Show ${stars} star recommendations`
                                     }
+                                    className="group flex content-center items-center gap-3"
                                     name={starsQuery !== null ? null : "stars"}
                                     value={starsQuery !== null ? null : stars}
                                 >
