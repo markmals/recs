@@ -2,19 +2,18 @@
     "root": true,
     "extends": [
         "eslint:recommended",
-        "@remix-run/eslint-config",
-        "@remix-run/eslint-config/node",
         "plugin:react/recommended",
-        "plugin:tailwindcss/recommended"
+        "@remix-run/eslint-config",
+        "@remix-run/eslint-config/node"
     ],
-    "rules": {
-        "react/react-in-jsx-scope": "off",
-        "react/jsx-sort-props": "warn",
-        "@typescript-eslint/triple-slash-reference": "off",
-        "@typescript-eslint/no-unused-vars": "warn",
-        // I want to be able to use CSS when I need to
-        "tailwindcss/no-custom-classname": "off",
-        // prettier-plugin-tailwindcss will take care of this for me
-        "tailwindcss/classnames-order": "off"
-    }
+    "overrides": [
+        {
+            "files": ["*"],
+            "rules": {
+                "react/jsx-sort-props": "warn",
+                "react/react-in-jsx-scope": "off",
+                "@typescript-eslint/no-non-null-assertion": "off"
+            }
+        }
+    ]
 }

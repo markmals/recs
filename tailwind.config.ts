@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss"
 
 export default {
-    content: ["./src/**/*.tsx"],
+    content: ["./app/**/*.tsx"],
     theme: {
         fontFamily: {
             "serif-display": [
