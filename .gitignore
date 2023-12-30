@@ -6,4 +6,3 @@ node_modules
 .env
 .output
 .DS_Store
-package-lock.json
