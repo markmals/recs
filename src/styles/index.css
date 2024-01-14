@@ -60,6 +60,15 @@ blockquote a:hover {
     text-decoration: underline;
 }
 
+p a {
+    color: theme("colors.amber.600");
+}
+
+p a:hover {
+    color: theme("colors.amber.700");
+    text-decoration: underline;
+}
+
 @media (prefers-color-scheme: dark) {
     .noise-container {
         background-color: #17191e;
@@ -87,6 +96,14 @@ blockquote a:hover {
     }
 
     blockquote a:hover {
+        color: theme("colors.purple.600");
+    }
+
+    p a {
+        color: theme("colors.purple.500");
+    }
+
+    p a:hover {
         color: theme("colors.purple.600");
     }
 }
