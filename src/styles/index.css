@@ -39,7 +39,7 @@
     color: theme("colors.white");
 }
 
-aside > p {
+aside p {
     color: theme("colors.orange.950");
     background-color: theme("colors.orange.100");
     border-radius: 0.75rem;
@@ -49,15 +49,6 @@ aside > p {
 
 aside {
     padding: 1rem 0.5rem 0rem 0.5rem;
-}
-
-aside a {
-    color: theme("colors.amber.600");
-}
-
-aside a:hover {
-    color: theme("colors.amber.700");
-    text-decoration: underline;
 }
 
 p a {
@@ -85,18 +76,10 @@ p a:hover {
         background-color: theme("colors.purple.600");
     }
 
-    aside > p {
+    aside p {
         color: theme("colors.purple.200");
         background-color: theme("colors.purple.950");
         border: 2px solid black;
-    }
-
-    aside a {
-        color: theme("colors.purple.500");
-    }
-
-    aside a:hover {
-        color: theme("colors.purple.600");
     }
 
     p a {
