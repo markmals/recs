@@ -5,12 +5,14 @@ const recommendationsCollection = v.object({
     link: v.string(),
     image: v.string(),
     stars: v.number(),
-    tags: v.array(
-        v.object({
-            name: v.string(),
-            link: v.optional(v.string([v.url()])),
-            // icon?: JSX.Element
-        }),
+    tags: v.optional(
+        v.array(
+            v.object({
+                name: v.string(),
+                link: v.optional(v.string([v.url()])),
+                // icon?: JSX.Element
+            }),
+        ),
     ),
     createdOn: v.date(),
 })
