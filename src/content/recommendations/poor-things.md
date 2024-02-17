@@ -3,10 +3,10 @@ title: Poor Things
 link: https://www.themoviedb.org/movie/792307-poor-things
 image: https://image.tmdb.org/t/p/original/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg
 stars: 2
-# tags:
-#     - name: Movie
-#     - name: Watch Now
-#       link: 
+tags:
+    - name: Movie
+    # - name: Watch Now
+    #   link: 
 createdOn: 2024-01-20
 ---
 
