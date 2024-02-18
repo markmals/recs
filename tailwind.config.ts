@@ -53,6 +53,11 @@ export default {
             "hard-lg": "-4px 4px 0px 0px #000",
             hard: "-2px 2px 0px 0px #000",
         },
+        extend: {
+            screens: {
+                xl: "1260px",
+            },
+        },
     },
     plugins: [],
     darkMode: "media",
