@@ -4,7 +4,7 @@ import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@re
 import { site } from "./lib/site"
 import "./styles/index.css"
 
-// export const config = { runtime: "edge" }
+export const config = { runtime: "edge" }
 
 export async function loader({ request }: LoaderFunctionArgs) {
     return json({ url: request.url })

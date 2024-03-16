@@ -3,9 +3,9 @@
     "sideEffects": false,
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build && vite build --ssr",
-        "start": "remix-serve ./build/index.js",
+        "dev": "remix vite:dev",
+        "build": "remix vite:build",
+        "start": "remix-serve ./build/server/index.js",
         "format": "prettier --write .",
         "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
         "typecheck": "tsc"
@@ -13,10 +13,10 @@
     "dependencies": {
         "@heroicons/react": "^2.1.1",
         "@radix-ui/react-accordion": "^1.1.2",
-        "@remix-run/node": "^2.4.1",
-        "@remix-run/react": "^2.4.1",
-        "@remix-run/serve": "^2.4.1",
-        "@vercel/remix": "^2.4.1",
+        "@remix-run/node": "^2.8.1",
+        "@remix-run/react": "^2.8.1",
+        "@remix-run/serve": "^2.8.1",
+        "@vercel/remix": "^2.8.1-patch.2",
         "cva": "^1.0.0-beta.1",
         "framer-motion": "^10.16.16",
         "front-matter": "^4.0.2",
@@ -30,8 +30,8 @@
         "valibot": "^0.25.0"
     },
     "devDependencies": {
-        "@remix-run/dev": "^2.4.1",
-        "@remix-run/eslint-config": "^2.4.1",
+        "@remix-run/dev": "^2.8.1",
+        "@remix-run/eslint-config": "^2.8.1",
         "@types/node": "^18.16.5",
         "@types/path-browserify": "^1.0.2",
         "@types/react": "^18.2.6",
@@ -43,8 +43,8 @@
         "prettier-plugin-tailwindcss": "^0.5.10",
         "tailwindcss": "^3.4.0",
         "typescript": "^5.2.2",
-        "vite": "^5.0.10",
-        "vite-tsconfig-paths": "^4.2.1"
+        "vite": "^5.1.6",
+        "vite-tsconfig-paths": "^4.3.2"
     },
     "prettier": {
         "printWidth": 100,

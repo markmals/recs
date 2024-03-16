@@ -15,7 +15,10 @@ export type Content<Data, Collection> = {
 export type Collecitons = typeof collections
 export type CollectionKey = keyof Collecitons
 
-const collectionFiles = import.meta.glob("/app/content/**/*.md", { eager: true, as: "raw" })
+const collectionFiles = import.meta.glob<true, string, { default: string }>(
+    "/app/content/**/*.md",
+    { eager: true, query: "?raw" },
+)
 
 export async function getCollection<Collection extends CollectionKey>(
     collection: Collection,
@@ -34,7 +37,7 @@ export async function getCollection<Collection extends CollectionKey>(
                 return contentDir === collection
             })
             .map(async ([path, file]) => {
-                const { attributes, body: content } = frontmatter(file)
+                const { attributes, body: content } = frontmatter(file.default)
                 let body = await marked(content)
                 let data = validate(collections[collection], attributes)
                 data.createdOn = new Date(data.createdOn)
