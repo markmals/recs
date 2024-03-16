@@ -1,92 +1,124 @@
-@import "./tailwind.css";
+@import "tailwindcss";
 @import "./fonts.css";
 @import "./accordion.css";
 
-.noise {
-    z-index: -20;
-    position: absolute;
-    inset: 0;
-    background-image: url(/noise.webp);
-    opacity: 0.4;
-    mix-blend-mode: overlay;
-    pointer-events: none;
+@theme {
+    --font-family-*: initial;
+    --font-family-serif-display: "Roslindale Display", -apple-system-ui-serif, ui-serif, Georgia,
+        "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times,
+        "Source Serif Pro", serif;
+    --font-family-serif-text: "Roslindale Text", -apple-system-ui-serif, ui-serif, Georgia,
+        "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times,
+        "Source Serif Pro", serif;
+    --font-family-sans: Outfit, "-apple-system", BlinkMacSystemFont, "avenir next", avenir,
+        "segoe ui", "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+
+    --shadow-*: initial;
+    --shadow-hard: -2px 2px 0px 0px #000;
+    --shadow-hard-lg: -4px 4px 0px 0px #000;
+
+    --breakpoint-xl: 1260px;
 }
 
-.noise-container::before {
-    position: absolute;
-    content: "";
-    z-index: -1;
-    top: -50%;
-    bottom: 10%;
-    width: 150%;
-    left: -50%;
-    background:
-        url(/noise.webp) repeat,
-        linear-gradient(83.21deg, #f59f0b 0%, #dc2626 100%);
-    background-blend-mode: color-burn;
-    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 50%);
-    mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 50%);
-}
-
-.noise-container {
-    position: relative;
-    isolation: isolate;
-    background-color: #f9ecdf;
-}
-
-::selection {
-    background-color: theme("colors.amber.500");
-    color: theme("colors.white");
-}
-
-aside p {
-    color: theme("colors.orange.950");
-    background-color: theme("colors.orange.100");
-    border-radius: 0.75rem;
-    border: 2px solid theme("colors.orange.950");
-    padding: 0.75rem;
-}
-
-aside {
-    padding: 1rem 0.5rem 0rem 0.5rem;
-}
-
-p a {
-    color: theme("colors.amber.600");
-}
-
-p a:hover {
-    color: theme("colors.amber.700");
-    text-decoration: underline;
-}
-
-@media (prefers-color-scheme: dark) {
-    .noise-container {
-        background-color: #17191e;
-    }
-
-    .noise-container::before {
-        background:
-            url(/noise.webp) repeat,
-            linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-        background-blend-mode: overlay;
+@layer base {
+    button {
+        cursor: pointer;
     }
 
     ::selection {
-        background-color: theme("colors.purple.600");
+        background-color: var(--color-amber-500);
+        color: var(--color-white);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        ::selection {
+            background-color: var(--color-purple-600);
+        }
+    }
+}
+
+@layer components {
+    .noise {
+        z-index: -20;
+        position: absolute;
+        inset: 0;
+        background-image: url(/noise.webp);
+        opacity: 0.4;
+        mix-blend-mode: overlay;
+        pointer-events: none;
+    }
+
+    .noise-container::before {
+        position: absolute;
+        content: "";
+        z-index: -1;
+        top: -50%;
+        bottom: 10%;
+        width: 150%;
+        left: -50%;
+        background:
+            url(/noise.webp) repeat,
+            linear-gradient(83.21deg, #f59f0b 0%, #dc2626 100%);
+        background-blend-mode: color-burn;
+        -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 50%);
+        mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 50%);
+    }
+
+    .noise-container {
+        position: relative;
+        isolation: isolate;
+        background-color: #f9ecdf;
     }
 
     aside p {
-        color: theme("colors.purple.200");
-        background-color: theme("colors.purple.950");
-        border: 2px solid black;
+        color: var(--color-orange-950);
+        background-color: var(--color-orange-100);
+        border-radius: 0.75rem;
+        border: 2px solid var(--color-orange-950);
+        padding: 0.75rem;
+    }
+
+    aside {
+        padding: 1rem 0.5rem 0rem 0.5rem;
     }
 
     p a {
-        color: theme("colors.purple.500");
+        color: var(--color-amber-600);
     }
 
     p a:hover {
-        color: theme("colors.purple.600");
+        color: var(--color-amber-700);
+        text-decoration: underline;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .noise-container {
+            background-color: #17191e;
+        }
+
+        .noise-container::before {
+            background:
+                url(/noise.webp) repeat,
+                linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+            background-blend-mode: overlay;
+        }
+
+        ::selection {
+            background-color: var(--color-purple-600);
+        }
+
+        aside p {
+            color: var(--color-purple-200);
+            background-color: var(--color-purple-950);
+            border: 2px solid black;
+        }
+
+        p a {
+            color: var(--color-purple-500);
+        }
+
+        p a:hover {
+            color: var(--color-purple-600);
+        }
     }
 }
