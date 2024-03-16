@@ -1,14 +1,14 @@
 import { ArrowPathIcon, ExclamationTriangleIcon } from "@heroicons/react/20/solid"
 import { AnimatePresence } from "framer-motion"
 import { useMemo } from "react"
-import type { LoaderFunctionArgs } from "react-router-dom"
-import { useLoaderData, useNavigate, useRouteError } from "react-router-dom"
+import { useLoaderData, useNavigate, useRouteError } from "@remix-run/react"
 import { Recommendation } from "~/components/Recommendation"
 import { Filters } from "~/components/filters/Filters"
-import { getCollection } from "~/lib/content.server"
+import { getCollection } from "~/lib/content"
 import { TokenButton } from "../components/Token"
+import type { LoaderFunctionArgs } from "@vercel/remix"
 
-export async function loader({ request }: LoaderFunctionArgs) {
+async function load({ request }: LoaderFunctionArgs) {
     let query = new URL(request.url).searchParams
     let starsQuery = new URLSearchParams(query).get("stars")
     let stars = starsQuery ? parseInt(starsQuery!) : null
@@ -26,8 +26,11 @@ export async function loader({ request }: LoaderFunctionArgs) {
     return { starsQuery, recs }
 }
 
+export const loader = load
+export const clientLoader = load
+
 export default function Index() {
-    let { recs } = useLoaderData() as Awaited<ReturnType<typeof loader>>
+    let { recs } = useLoaderData<typeof clientLoader>()
     let recsWithDates = useMemo(
         () => recs.map(rec => ({ ...rec, createdOn: new Date(rec.createdOn) })),
         [recs],

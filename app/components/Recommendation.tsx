@@ -1,8 +1,8 @@
 import { motion } from "framer-motion"
 import { useMemo } from "react"
-import { Form, Link, useLoaderData } from "react-router-dom"
+import { Form, Link, useLoaderData } from "@remix-run/react"
 import type { Recommendation as IRecommendation } from "~/lib/data"
-import type { loader } from "~/routes/_index"
+import type { clientLoader } from "~/routes/_index"
 import { Star } from "./Star"
 import { Token } from "./Token"
 
@@ -13,7 +13,7 @@ export namespace Recommendation {
 }
 
 export function Recommendation({ recommendation }: Recommendation.Props) {
-    let { starsQuery } = useLoaderData() as Awaited<ReturnType<typeof loader>>
+    let { starsQuery } = useLoaderData<typeof clientLoader>()
 
     let { slug, image, link, title, stars, description, tags } = recommendation
 
@@ -34,14 +34,14 @@ export function Recommendation({ recommendation }: Recommendation.Props) {
 
     return (
         <motion.div
-            className="flex min-h-[264px] w-full flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 shadow-hard-lg dark:bg-[#232326] sm:flex-row"
+            className="shadow-hard-lg flex min-h-[264px] w-full flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 sm:flex-row dark:bg-[#232326]"
             id={slug}
             layout
         >
             {!!image && (
                 <img
                     alt=""
-                    className="aspect-[5/4] max-h-80 border-2 border-black object-cover shadow-hard sm:aspect-[2/3]"
+                    className="shadow-hard aspect-[5/4] max-h-80 border-2 border-black object-cover sm:aspect-[2/3]"
                     src={image}
                 />
             )}
@@ -66,8 +66,8 @@ export function Recommendation({ recommendation }: Recommendation.Props) {
                                             : `Show ${stars} star recommendations`
                                     }
                                     className="group flex content-center items-center gap-3"
-                                    name={starsQuery !== null ? null : "stars"}
-                                    value={starsQuery !== null ? null : stars}
+                                    name={starsQuery !== null ? undefined : "stars"}
+                                    value={starsQuery !== null ? undefined : stars}
                                 >
                                     {starArray.map((_, index) => (
                                         <Star hover={true} key={index} />
