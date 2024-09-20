@@ -1,6 +1,6 @@
 import type { LinksFunction, LoaderFunctionArgs, MetaFunction } from "@vercel/remix"
 import { json } from "@vercel/remix"
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react"
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react"
 import { site } from "./lib/site"
 import "./styles/index.css"
 
@@ -40,7 +40,6 @@ export default function Root() {
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />
-                <LiveReload />
             </body>
         </html>
     )

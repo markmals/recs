@@ -30,8 +30,8 @@
         "valibot": "^0.25.0"
     },
     "devDependencies": {
-        "@remix-run/dev": "^2.12.0",
-        "@remix-run/eslint-config": "^2.12.0",
+        "@remix-run/dev": "2.12.0",
+        "@remix-run/eslint-config": "2.12.0",
         "@tailwindcss/vite": "^4.0.0-alpha.9",
         "@types/node": "^18.16.5",
         "@types/path-browserify": "^1.0.2",
