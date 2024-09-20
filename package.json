@@ -13,10 +13,10 @@
     "dependencies": {
         "@heroicons/react": "^2.1.1",
         "@radix-ui/react-accordion": "^1.1.2",
-        "@remix-run/node": "^2.8.1",
-        "@remix-run/react": "^2.8.1",
-        "@remix-run/serve": "^2.8.1",
-        "@vercel/remix": "^2.8.1-patch.2",
+        "@remix-run/node": "2.12.0",
+        "@remix-run/react": "2.12.0",
+        "@remix-run/serve": "2.12.0",
+        "@vercel/remix": "^2.12.0",
         "cva": "^1.0.0-beta.1",
         "framer-motion": "^10.16.16",
         "front-matter": "^4.0.2",
@@ -30,8 +30,8 @@
         "valibot": "^0.25.0"
     },
     "devDependencies": {
-        "@remix-run/dev": "^2.8.1",
-        "@remix-run/eslint-config": "^2.8.1",
+        "@remix-run/dev": "^2.12.0",
+        "@remix-run/eslint-config": "^2.12.0",
         "@tailwindcss/vite": "^4.0.0-alpha.9",
         "@types/node": "^18.16.5",
         "@types/path-browserify": "^1.0.2",
@@ -42,7 +42,7 @@
         "postcss": "^8.4.32",
         "prettier": "^3.1.1",
         "prettier-plugin-tailwindcss": "^0.5.10",
-        "tailwindcss": "^4.0.0-alpha.9",
+        "tailwindcss": "^4.0.0-alpha.24",
         "typescript": "^5.2.2",
         "vite": "^5.1.6",
         "vite-tsconfig-paths": "^4.3.2"
