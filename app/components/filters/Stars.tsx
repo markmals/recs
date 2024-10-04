@@ -1,10 +1,10 @@
 import { ChevronRightIcon } from "@heroicons/react/24/outline"
 import * as Accordion from "@radix-ui/react-accordion"
 import { cx } from "cva"
-import { Form, useLoaderData } from "react-router-dom"
-import type { loader } from "~/routes/_index"
+import { Form, useLoaderData } from "react-router"
 import { Star } from "../Star"
 import { TokenButton } from "../Token"
+import type { LoaderData } from "../../routes/+types._index"
 
 export function Header() {
     return (
@@ -22,7 +22,7 @@ export function Header() {
 const starRange = [1, 2, 3]
 
 export function Options() {
-    let { starsQuery } = useLoaderData() as Awaited<ReturnType<typeof loader>>
+    let { starsQuery } = useLoaderData() as Exclude<LoaderData, undefined>
     let stars = starsQuery ? parseInt(starsQuery!) : null
 
     return (
@@ -30,7 +30,7 @@ export function Options() {
             <button
                 aria-label={`Show recommendations with no stars`}
                 className={cx([
-                    "pl-11 text-left font-serif-text text-xl hover:opacity-100",
+                    "font-serif-text pl-11 text-left text-xl hover:opacity-100",
                     stars === 0 ? "opacity-100" : "opacity-50",
                 ])}
                 name="stars"

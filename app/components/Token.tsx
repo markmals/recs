@@ -1,6 +1,6 @@
 import { cva } from "cva"
-import { ReactNode } from "react"
-import { Link } from "react-router-dom"
+import type { ReactNode } from "react"
+import { Link } from "react-router"
 import type { Tag } from "~/lib/data"
 import type { ClassProps } from "~/lib/props"
 

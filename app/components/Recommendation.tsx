@@ -1,10 +1,10 @@
 import { motion } from "framer-motion"
 import { useMemo } from "react"
-import { Form, Link, useLoaderData } from "@remix-run/react"
+import { Form, Link, useLoaderData } from "react-router"
 import type { Recommendation as IRecommendation } from "~/lib/data"
-import type { clientLoader } from "~/routes/_index"
 import { Star } from "./Star"
 import { Token } from "./Token"
+import type { LoaderData } from "../routes/+types._index"
 
 export namespace Recommendation {
     export interface Props {
@@ -13,7 +13,7 @@ export namespace Recommendation {
 }
 
 export function Recommendation({ recommendation }: Recommendation.Props) {
-    let { starsQuery } = useLoaderData<typeof clientLoader>()
+    let { starsQuery } = useLoaderData() as Exclude<LoaderData, undefined>
 
     let { slug, image, link, title, stars, description, tags } = recommendation
 

@@ -1,14 +1,16 @@
 import { ArrowPathIcon, ExclamationTriangleIcon } from "@heroicons/react/20/solid"
 import { AnimatePresence } from "framer-motion"
 import { useMemo } from "react"
-import { useLoaderData, useNavigate, useRouteError } from "@remix-run/react"
+import { useNavigate } from "react-router"
 import { Recommendation } from "~/components/Recommendation"
 import { Filters } from "~/components/filters/Filters"
 import { getCollection } from "~/lib/content"
 import { TokenButton } from "../components/Token"
-import type { LoaderFunctionArgs } from "@vercel/remix"
+import type { LoaderFunctionArgs } from "react-router"
 
-async function load({ request }: LoaderFunctionArgs) {
+import type { ComponentProps, ErrorBoundaryProps } from "./+types._index"
+
+async function loader({ request }: LoaderFunctionArgs) {
     let query = new URL(request.url).searchParams
     let starsQuery = new URLSearchParams(query).get("stars")
     let stars = starsQuery ? parseInt(starsQuery!) : null
@@ -26,11 +28,11 @@ async function load({ request }: LoaderFunctionArgs) {
     return { starsQuery, recs }
 }
 
-export const loader = load
-export const clientLoader = load
+export const serverLoader = loader
+export const clientLoader = loader
 
-export default function Index() {
-    let { recs } = useLoaderData<typeof clientLoader>()
+export default function Index({ loaderData }: ComponentProps) {
+    let recs = loaderData!.recs
     let recsWithDates = useMemo(
         () => recs.map(rec => ({ ...rec, createdOn: new Date(rec.createdOn) })),
         [recs],
@@ -55,10 +57,9 @@ export default function Index() {
     )
 }
 
-export function ErrorBoundary() {
+export function ErrorBoundary({ error: err }: ErrorBoundaryProps) {
     let navigate = useNavigate()
-
-    let error = useRouteError() as any
+    let error = err as any
     let message = error.statusText || error.message
     console.error(error)
 
@@ -68,7 +69,7 @@ export function ErrorBoundary() {
             <h3 className="mt-2 font-sans text-4xl font-semibold text-amber-950 dark:text-purple-200">
                 Error!
             </h3>
-            <p className="mt-1 font-serif-text text-amber-950 dark:text-purple-200">
+            <p className="font-serif-text mt-1 text-amber-950 dark:text-purple-200">
                 <i>{message}</i>
             </p>
             <div className="mt-6">

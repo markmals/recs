@@ -1,16 +1,16 @@
-import type { LinksFunction, LoaderFunctionArgs, MetaFunction } from "@vercel/remix"
-import { json } from "@vercel/remix"
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react"
+import type { LinksFunction, LoaderFunctionArgs, MetaFunction } from "react-router"
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
 import { site } from "./lib/site"
+// import styles from "./styles/index.css?url"
 import "./styles/index.css"
 
 export const config = { runtime: "edge" }
 
 export async function loader({ request }: LoaderFunctionArgs) {
-    return json({ url: request.url })
+    return { url: request.url }
 }
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => [
+export const meta: MetaFunction<any> = ({ data }) => [
     { charSet: "utf-8" },
     { title: site.title },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -24,6 +24,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => [
 
 export const links: LinksFunction = () => [
     { rel: "icon", type: "image/svg+xml", href: site.favicon },
+    // { rel: "stylesheet", href: styles },
 ]
 
 export default function Root() {
