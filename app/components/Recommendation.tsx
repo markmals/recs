@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useMemo } from "react";
 import { Form, Link, useLoaderData } from "react-router";
 import type { HydratedRec } from "~/lib/data";
@@ -28,10 +27,9 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
     );
 
     return (
-        <motion.div
+        <div
             className="flex min-h-[264px] w-full flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 shadow-hard-lg sm:flex-row dark:bg-[#232326]"
             id={slug}
-            layout="position"
         >
             {!!image && (
                 <img
@@ -90,6 +88,6 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
                     </Link>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 }

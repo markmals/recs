@@ -1,5 +1,5 @@
 import { ArrowPathIcon, ExclamationTriangleIcon } from "@heroicons/react/20/solid";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { isRouteErrorResponse, useNavigate } from "react-router";
 import { Recommendation } from "~/components/Recommendation";
 import { Filters } from "~/components/filters/Filters";
@@ -71,7 +71,9 @@ export default function Component({ loaderData }: Route.ComponentProps) {
                 <div className="flex flex-col items-start gap-7 py-10">
                     <AnimatePresence>
                         {loaderData.filteredRecs.map(rec => (
-                            <Recommendation key={rec.slug} recommendation={rec} />
+                            <motion.div key={rec.slug} layout>
+                                <Recommendation recommendation={rec} />
+                            </motion.div>
                         ))}
                     </AnimatePresence>
                 </div>
