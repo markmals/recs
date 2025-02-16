@@ -11,4 +11,6 @@ export default defineConfig(({ isSsrBuild }) => ({
     build: {
         rollupOptions: isSsrBuild ? { input: "./workers/app.ts" } : undefined,
     },
+    // FIXME: Why do I need this alias when the default CF template does not?
+    resolve: { alias: { "react-dom/server": "react-dom/server.edge" } },
 }));
