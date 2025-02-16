@@ -7,7 +7,7 @@ import type { ClassProps } from "~/lib/props";
 export type HTMLAttributeAnchorTarget = "_self" | "_blank" | "_parent" | "_top" | string;
 
 const token = cva({
-    base: "rounded-lg shadow-hard border-2 font-serif-text border-black p-2 bg-amber-500 dark:bg-purple-600",
+    base: "rounded-lg border-2 border-black bg-amber-500 p-2 font-serif-text shadow-hard dark:bg-purple-600",
     variants: {
         type: {
             button: "hover:bg-amber-600 dark:hover:bg-purple-800",

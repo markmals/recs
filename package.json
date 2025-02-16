@@ -8,7 +8,9 @@
         "deploy": "npm run build && wrangler deploy",
         "typecheck": "react-router typegen && tsc -b",
         "typegen:watch": "react-router typegen --watch",
-        "typecheck:watch": "tsc --watch"
+        "typecheck:watch": "tsc --watch",
+        "fmt": "prettier -w .",
+        "lint": "eslint --cache --fix ."
     },
     "dependencies": {
         "@heroicons/react": "^2.2.0",

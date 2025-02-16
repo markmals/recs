@@ -6,4 +6,4 @@ export const site = {
         dark: "/social-media-dark.png",
         light: "/social-media-light.png",
     },
-}
+};

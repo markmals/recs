@@ -140,6 +140,9 @@ export default [
 
             "@typescript-eslint/no-unused-vars": "warn",
 
+            "@typescript-eslint/no-namespace": "off",
+            "no-redeclare": "off",
+
             "@typescript-eslint/consistent-type-imports": [
                 "warn",
                 { fixStyle: "separate-type-imports" },

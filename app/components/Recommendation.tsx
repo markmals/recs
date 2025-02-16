@@ -22,21 +22,21 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
     const showStars = !!stars;
     const starArray = Array(stars).fill(0);
 
-    let createdOn = useMemo(
+    const createdOn = useMemo(
         () => frontmatterDateFormatter.format(recommendation.createdOn),
         [recommendation.createdOn],
     );
 
     return (
         <motion.div
-            className="shadow-hard-lg flex min-h-[264px] w-full flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 sm:flex-row dark:bg-[#232326]"
+            className="flex min-h-[264px] w-full flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 shadow-hard-lg sm:flex-row dark:bg-[#232326]"
             id={slug}
             layout="position"
         >
             {!!image && (
                 <img
                     alt=""
-                    className="shadow-hard aspect-[5/4] max-h-80 border-2 border-black object-cover sm:aspect-[2/3]"
+                    className="aspect-[5/4] max-h-80 border-2 border-black object-cover shadow-hard sm:aspect-[2/3]"
                     src={image}
                 />
             )}
@@ -55,14 +55,14 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
                         {showStars && (
                             <Form>
                                 <button
+                                    className="group flex content-center items-center gap-3"
+                                    name={starsQuery !== null ? undefined : "stars"}
+                                    value={starsQuery !== null ? undefined : stars}
                                     aria-label={
                                         starsQuery !== null
                                             ? "Clear stars filter and show all reccomendations"
                                             : `Show ${stars} star recommendations`
                                     }
-                                    className="group flex content-center items-center gap-3"
-                                    name={starsQuery !== null ? undefined : "stars"}
-                                    value={starsQuery !== null ? undefined : stars}
                                 >
                                     {starArray.map((_, index) => (
                                         <Star key={index} hover={true} />
@@ -80,9 +80,7 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
 
                 <div className="flex w-full flex-wrap items-center justify-between gap-4 pr-4">
                     <div className="flex items-center gap-3">
-                        {tags?.map(tag => (
-                            <Token key={tag.name} tag={tag} />
-                        ))}
+                        {tags?.map(tag => <Token key={tag.name} tag={tag} />)}
                     </div>
                     <Link
                         className="font-serif-text hover:text-amber-500 hover:underline dark:hover:text-purple-600"

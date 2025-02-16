@@ -28,31 +28,31 @@ export function Options() {
         <div className="flex flex-col gap-6">
             <button
                 aria-label={`Show recommendations with no stars`}
-                className={cx([
-                    "font-serif-text pl-11 text-left text-xl hover:opacity-100",
-                    stars === 0 ? "opacity-100" : "opacity-50",
-                ])}
                 name="stars"
                 value="0"
+                className={cx([
+                    "pl-11 text-left font-serif-text text-xl hover:opacity-100",
+                    stars === 0 ? "opacity-100" : "opacity-50",
+                ])}
             >
                 No Stars
             </button>
 
             {RANGE.map(num => (
                 <button
+                    key={num}
                     aria-label={`Show ${num} star recommendations`}
+                    name="stars"
+                    value={num}
                     className={cx([
                         "flex items-center gap-2 pl-11 hover:opacity-100",
                         stars === num ? "opacity-100" : "opacity-50",
                     ])}
-                    key={num}
-                    name="stars"
-                    value={num}
                 >
                     {Array(num)
                         .fill(num)
                         .map((_, index) => (
-                            <Star filled={stars === num} key={index} />
+                            <Star key={index} filled={stars === num} />
                         ))}
                 </button>
             ))}

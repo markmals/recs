@@ -1,3 +1,3 @@
 export interface ClassProps {
-    className?: string
+    className?: string;
 }
