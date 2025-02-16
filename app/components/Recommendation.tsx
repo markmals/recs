@@ -1,42 +1,37 @@
-import { motion } from "framer-motion"
-import { useMemo } from "react"
-import { Form, Link, useLoaderData } from "@remix-run/react"
-import type { Recommendation as IRecommendation } from "~/lib/data"
-import type { clientLoader } from "~/routes/_index"
-import { Star } from "./Star"
-import { Token } from "./Token"
+import { motion } from "framer-motion";
+import { useMemo } from "react";
+import { Form, Link, useLoaderData } from "react-router";
+import type { HydratedRec } from "~/lib/data";
+import { Star } from "./Star";
+import { Token } from "./Token";
+import type { Route } from "../routes/_index/+types/route";
 
-export namespace Recommendation {
-    export interface Props {
-        recommendation: IRecommendation
-    }
-}
+const frontmatterDateFormatter = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    // Frontmatter dates get parsed as GMT:
+    timeZone: "Europe/London",
+});
 
-export function Recommendation({ recommendation }: Recommendation.Props) {
-    let { starsQuery } = useLoaderData<typeof clientLoader>()
+export function Recommendation({ recommendation }: { recommendation: HydratedRec }) {
+    const { stars: starsQuery } = useLoaderData() as Route.ComponentProps["loaderData"];
 
-    let { slug, image, link, title, stars, description, tags } = recommendation
+    const { slug, image, link, title, stars, description, tags } = recommendation;
 
-    let showStars = !!stars
-    let starArray = Array(stars).fill(0)
+    const showStars = !!stars;
+    const starArray = Array(stars).fill(0);
 
     let createdOn = useMemo(
-        () =>
-            new Intl.DateTimeFormat("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                // Because the frontmatter dates get parsed as GMT:
-                timeZone: "Europe/London",
-            }).format(recommendation.createdOn),
+        () => frontmatterDateFormatter.format(recommendation.createdOn),
         [recommendation.createdOn],
-    )
+    );
 
     return (
         <motion.div
             className="shadow-hard-lg flex min-h-[264px] w-full flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 sm:flex-row dark:bg-[#232326]"
             id={slug}
-            layout
+            layout="position"
         >
             {!!image && (
                 <img
@@ -70,7 +65,7 @@ export function Recommendation({ recommendation }: Recommendation.Props) {
                                     value={starsQuery !== null ? undefined : stars}
                                 >
                                     {starArray.map((_, index) => (
-                                        <Star hover={true} key={index} />
+                                        <Star key={index} hover={true} />
                                     ))}
                                 </button>
                             </Form>
@@ -85,7 +80,9 @@ export function Recommendation({ recommendation }: Recommendation.Props) {
 
                 <div className="flex w-full flex-wrap items-center justify-between gap-4 pr-4">
                     <div className="flex items-center gap-3">
-                        {tags?.map(tag => <Token key={tag.name} tag={tag} />)}
+                        {tags?.map(tag => (
+                            <Token key={tag.name} tag={tag} />
+                        ))}
                     </div>
                     <Link
                         className="font-serif-text hover:text-amber-500 hover:underline dark:hover:text-purple-600"
@@ -96,5 +93,5 @@ export function Recommendation({ recommendation }: Recommendation.Props) {
                 </div>
             </div>
         </motion.div>
-    )
+    );
 }

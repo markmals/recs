@@ -1,23 +1,11 @@
 {
-    "include": ["env.d.ts", "**/*.ts", "**/*.tsx"],
+    "files": [],
+    "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.cloudflare.json" }],
     "compilerOptions": {
-        "lib": ["DOM", "DOM.Iterable", "ESNext"],
-        "isolatedModules": true,
-        "esModuleInterop": true,
-        "jsx": "react-jsx",
-        "moduleResolution": "bundler",
-        "module": "ESNext",
-        "resolveJsonModule": true,
-        "target": "ESNext",
+        "checkJs": true,
+        "verbatimModuleSyntax": true,
+        "skipLibCheck": true,
         "strict": true,
-        "allowJs": true,
-        "forceConsistentCasingInFileNames": true,
-        "baseUrl": ".",
-        "paths": {
-            "~/*": ["./app/*"]
-        },
-
-        // Remix takes care of building everything in `remix build`.
         "noEmit": true
     }
 }

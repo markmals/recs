@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "typecheck",
+            "detail": "Runs TypeScript checker and RR7 type generator in parallel",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": ["npm: typecheck:watch", "npm: typegen:watch"],
+            "dependsOrder": "parallel"
+        },
+        // Display TypeScript issues across the project in the VS Code Problems panel natively
+        {
+            "type": "npm",
+            "script": "typecheck:watch",
+            "group": "build",
+            "problemMatcher": ["$tsc-watch"],
+            "label": "npm: typecheck:watch",
+            "detail": "tsc --watch"
+        },
+        {
+            "type": "npm",
+            "script": "typegen:watch",
+            "group": "build",
+            "problemMatcher": [],
+            "label": "npm: typegen:watch",
+            "detail": "react-router typegen --watch"
+        }
+    ]
+}

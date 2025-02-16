@@ -1,12 +1,5 @@
-import { cva } from "cva"
-import type { ClassProps } from "~/lib/props"
-
-export namespace Star {
-    export interface Props extends ClassProps {
-        filled?: boolean
-        hover?: boolean
-    }
-}
+import { cva } from "cva";
+import type { ClassProps } from "~/lib/props";
 
 const star = cva({
     variants: {
@@ -18,7 +11,14 @@ const star = cva({
             true: "group-hover:fill-amber-600 dark:group-hover:fill-purple-800",
         },
     },
-})
+});
+
+export namespace Star {
+    export interface Props extends ClassProps {
+        filled?: boolean;
+        hover?: boolean;
+    }
+}
 
 export function Star({ filled = true, hover = false, className = undefined }: Star.Props) {
     return (
@@ -36,5 +36,5 @@ export function Star({ filled = true, hover = false, className = undefined }: St
                 stroke={filled ? "black" : undefined}
             />
         </svg>
-    )
+    );
 }

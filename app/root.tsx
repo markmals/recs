@@ -1,32 +1,46 @@
-import type { LinksFunction, LoaderFunctionArgs, MetaFunction } from "@vercel/remix"
-import { json } from "@vercel/remix"
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react"
-import { site } from "./lib/site"
-import "./styles/index.css"
+import {
+    isRouteErrorResponse,
+    Links,
+    Meta,
+    Outlet,
+    Scripts,
+    ScrollRestoration,
+} from "react-router";
 
-export const config = { runtime: "edge" }
+import type { ReactNode } from "react";
+import { site } from "./lib/site";
+import styles from "./styles/index.css?url";
 
-export async function loader({ request }: LoaderFunctionArgs) {
-    return json({ url: request.url })
+import type { Route } from "./+types/root";
+
+export async function loader({ request }: Route.LoaderArgs) {
+    return { url: request.url };
 }
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => [
+export const meta: Route.MetaFunction = ({ data }) => [
     { charSet: "utf-8" },
     { title: site.title },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     { name: "description", content: site.description },
+
     { name: "og:title", content: site.title },
     { name: "og:type", content: "website" },
     { name: "og:image", content: site.socialMediaImage.dark },
     { name: "og:description", content: site.description },
-    { name: "og:url", content: data!.url },
-]
+    { name: "og:url", content: data.url },
 
-export const links: LinksFunction = () => [
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: site.title },
+    { name: "twitter:description", content: site.description },
+    { name: "twitter:image", content: site.socialMediaImage.dark },
+];
+
+export const links: Route.LinksFunction = () => [
     { rel: "icon", type: "image/svg+xml", href: site.favicon },
-]
+    { rel: "stylesheet", href: styles },
+];
 
-export default function Root() {
+export function Layout({ children }: { children: ReactNode }) {
     return (
         <html
             className="h-full w-full bg-[#f9ecdf] text-black dark:bg-[#17191e] dark:text-white"
@@ -37,10 +51,43 @@ export default function Root() {
                 <Links />
             </head>
             <body className="h-full">
-                <Outlet />
+                {children}
                 <ScrollRestoration />
                 <Scripts />
             </body>
         </html>
-    )
+    );
+}
+
+export default function App() {
+    return <Outlet />;
+}
+
+export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+    let message = "Oops!";
+    let details = "An unexpected error occurred.";
+    let stack: string | undefined;
+
+    if (isRouteErrorResponse(error)) {
+        message = error.status === 404 ? "404" : "Error";
+        details =
+            error.status === 404
+                ? "The requested page could not be found."
+                : error.statusText || details;
+    } else if (import.meta.env.DEV && error && error instanceof Error) {
+        details = error.message;
+        stack = error.stack;
+    }
+
+    return (
+        <main className="container mx-auto p-4 pt-16">
+            <h1>{message}</h1>
+            <p>{details}</p>
+            {stack && (
+                <pre className="w-full overflow-x-auto p-4">
+                    <code>{stack}</code>
+                </pre>
+            )}
+        </main>
+    );
 }

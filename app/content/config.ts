@@ -1,4 +1,4 @@
-import * as v from "valibot"
+import * as v from "valibot";
 
 const recommendationsCollection = v.object({
     title: v.string(),
@@ -9,14 +9,14 @@ const recommendationsCollection = v.object({
         v.array(
             v.object({
                 name: v.string(),
-                link: v.optional(v.string([v.url()])),
+                link: v.optional(v.pipe(v.string(), v.url())),
                 // icon?: JSX.Element
             }),
         ),
     ),
     createdOn: v.date(),
-})
+});
 
 export const collections = {
     recommendations: recommendationsCollection,
-}
+};

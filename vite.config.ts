@@ -1,23 +1,14 @@
-import { vitePlugin as remix } from "@remix-run/dev"
-import tailwind from "@tailwindcss/vite"
-import { defineConfig } from "vite"
-import tsconfigPaths from "vite-tsconfig-paths"
-import { vercelPreset } from "@vercel/remix/vite"
+import { defineConfig } from "vite";
 
-export default defineConfig({
-    plugins: [
-        remix({
-            presets: [vercelPreset()],
-            future: {
-                v3_fetcherPersist: true,
-                v3_relativeSplatPath: true,
-                v3_throwAbortReason: true,
-                unstable_singleFetch: true,
-                unstable_lazyRouteDiscovery: true,
-                unstable_optimizeDeps: true,
-            },
-        }),
-        tailwind(),
-        tsconfigPaths(),
-    ],
-})
+import { reactRouter } from "@react-router/dev/vite";
+import { cloudflareDevProxy } from "@react-router/dev/vite/cloudflare";
+
+import tailwindcss from "@tailwindcss/vite";
+import tsconfigPaths from "vite-tsconfig-paths";
+
+export default defineConfig(({ isSsrBuild }) => ({
+    plugins: [cloudflareDevProxy(), reactRouter(), tailwindcss(), tsconfigPaths()],
+    build: {
+        rollupOptions: isSsrBuild ? { input: "./workers/app.ts" } : undefined,
+    },
+}));

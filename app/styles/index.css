@@ -1,17 +1,18 @@
-@import "tailwindcss";
 @import "./fonts.css";
 @import "./accordion.css";
 
+@import "tailwindcss";
+
 @theme {
-    --font-family-*: initial;
-    --font-family-serif-display: "Roslindale Display", -apple-system-ui-serif, ui-serif, Georgia,
+    --font-*: initial;
+    --font-serif-display: "Roslindale Display", -apple-system-ui-serif, ui-serif, Georgia,
         "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times,
         "Source Serif Pro", serif;
-    --font-family-serif-text: "Roslindale Text", -apple-system-ui-serif, ui-serif, Georgia,
+    --font-serif-text: "Roslindale Text", -apple-system-ui-serif, ui-serif, Georgia,
         "Iowan Old Style", "Apple Garamond", Baskerville, "Times New Roman", "Droid Serif", Times,
         "Source Serif Pro", serif;
-    --font-family-sans: Outfit, "-apple-system", BlinkMacSystemFont, "avenir next", avenir,
-        "segoe ui", "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    --font-sans: Outfit, "-apple-system", BlinkMacSystemFont, "avenir next", avenir, "segoe ui",
+        "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 
     --shadow-*: initial;
     --shadow-hard: -2px 2px 0px 0px #000;
@@ -56,9 +57,7 @@
         bottom: 10%;
         width: 150%;
         left: -50%;
-        background:
-            url(/noise.webp) repeat,
-            linear-gradient(83.21deg, #f59f0b 0%, #dc2626 100%);
+        background: url(/noise.webp) repeat, linear-gradient(83.21deg, #f59f0b 0%, #dc2626 100%);
         background-blend-mode: color-burn;
         -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 50%);
         mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 50%);
@@ -97,9 +96,7 @@
         }
 
         .noise-container::before {
-            background:
-                url(/noise.webp) repeat,
-                linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+            background: url(/noise.webp) repeat, linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
             background-blend-mode: overlay;
         }
 
