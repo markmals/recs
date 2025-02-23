@@ -5,6 +5,15 @@ export default {
     semi: true,
     arrowParens: "avoid",
 
+    overrides: [
+        {
+            files: "*.jsonc",
+            options: {
+                trailingComma: "none",
+            },
+        },
+    ],
+
     // Tailwind class sorter config
     plugins: ["prettier-plugin-tailwindcss"],
     tailwindStylesheet: "./app/styles/index.css",
