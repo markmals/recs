@@ -9,7 +9,8 @@ import {
 
 import type { ReactNode } from "react";
 import { site } from "./lib/site";
-import styles from "./styles/index.css?url";
+// import styles from "./styles/index.css?url";
+import "./styles/index.css";
 
 import type { Route } from "./+types/root";
 
@@ -37,7 +38,7 @@ export const meta: Route.MetaFunction = ({ data }) => [
 
 export const links: Route.LinksFunction = () => [
     { rel: "icon", type: "image/svg+xml", href: site.favicon },
-    { rel: "stylesheet", href: styles },
+    // { rel: "stylesheet", href: styles },
 ];
 
 export function Layout({ children }: { children: ReactNode }) {
