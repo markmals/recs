@@ -10,7 +10,12 @@ import type { Route } from "./+types/route";
 import { TokenButton } from "../../components/Token";
 
 export async function loader({ request }: Route.LoaderArgs) {
-    const collection = await getCollection("recommendations");
+    let collection = await getCollection("recommendations");
+
+    if (import.meta.env.DEV && new URL(request.url).searchParams.has("drafts")) {
+        collection = [...collection, ...(await getCollection("drafts"))] as typeof collection;
+    }
+
     const stars = new Stars(request);
     const recs = collection.map(recommendation => ({
         ...recommendation.data,
@@ -71,7 +76,7 @@ export default function Component({ loaderData }: Route.ComponentProps) {
                 <div className="flex flex-col items-start gap-7 py-10">
                     <AnimatePresence>
                         {loaderData.filteredRecs.map(rec => (
-                            <motion.div key={rec.slug} layout>
+                            <motion.div className="w-full" key={rec.slug} layout>
                                 <Recommendation recommendation={rec} />
                             </motion.div>
                         ))}
@@ -108,7 +113,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
                 <i>{details}</i>
             </p>
             <div className="mt-6">
-                <TokenButton type="button" onClick={() => navigate(0)}>
+                <TokenButton onClick={() => navigate(0)} type="button">
                     <div className="flex flex-row items-center">
                         <ArrowPathIcon aria-hidden="true" className="mr-1.5 -ml-0.5 h-5 w-5" />
                         Refresh

@@ -5,7 +5,7 @@ export class Stars {
 
     constructor(request: Request) {
         const count = new URL(request.url).searchParams.get("stars");
-        this.count = count ? parseInt(count) : null;
+        this.count = count ? Number.parseInt(count) : null;
     }
 }
 

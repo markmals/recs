@@ -37,8 +37,8 @@ export async function getCollection<Collection extends CollectionKey>(
                 return contentDir === collection;
             })
             .map(async ([filePath, file]) => {
-                const { attributes, body: content } = frontmatter(file.default);
-                const body = await marked(content);
+                let { attributes, body } = frontmatter(file.default);
+                body = await marked(body);
                 const data = validate(collections[collection], attributes);
                 data.createdOn = new Date(data.createdOn);
                 return { slug: path.parse(filePath).name, body, data, collection };

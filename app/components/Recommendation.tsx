@@ -28,7 +28,7 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
 
     return (
         <div
-            className="flex min-h-[264px] w-full flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 shadow-hard-lg sm:flex-row dark:bg-[#232326]"
+            className="flex min-h-[264px] flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 shadow-hard-lg sm:flex-row dark:bg-[#232326]"
             id={slug}
         >
             {!!image && (
@@ -53,17 +53,19 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
                         {showStars && (
                             <Form>
                                 <button
-                                    className="group flex content-center items-center gap-3"
-                                    name={starsQuery !== null ? undefined : "stars"}
-                                    value={starsQuery !== null ? undefined : stars}
                                     aria-label={
                                         starsQuery !== null
                                             ? "Clear stars filter and show all reccomendations"
                                             : `Show ${stars} star recommendations`
                                     }
+                                    className="group flex content-center items-center gap-3"
+                                    name={starsQuery !== null ? undefined : "stars"}
+                                    type="submit"
+                                    value={starsQuery !== null ? undefined : stars}
                                 >
                                     {starArray.map((_, index) => (
-                                        <Star key={index} hover={true} />
+                                        // biome-ignore lint/suspicious/noArrayIndexKey: Nodes are identical
+                                        <Star hover={true} key={index} />
                                     ))}
                                 </button>
                             </Form>
@@ -72,8 +74,9 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
 
                     <span
                         className="font-serif-text"
+                        // biome-ignore lint/security/noDangerouslySetInnerHtml: Markdown rendered on the server
                         dangerouslySetInnerHTML={{ __html: description }}
-                    ></span>
+                    />
                 </div>
 
                 <div className="flex w-full flex-wrap items-center justify-between gap-4 pr-4">

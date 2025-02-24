@@ -1,6 +1,6 @@
 import * as v from "valibot";
 
-const recommendationsCollection = v.object({
+const recommendations = v.object({
     title: v.string(),
     link: v.string(),
     image: v.string(),
@@ -18,5 +18,6 @@ const recommendationsCollection = v.object({
 });
 
 export const collections = {
-    recommendations: recommendationsCollection,
+    recommendations,
+    drafts: recommendations,
 };
