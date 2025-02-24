@@ -1,7 +1,7 @@
 ---
 title: Lil' Easy
 link: https://www.lileasyatx.com/
-image: /images/lil-easy-crawfish.jpg
+image: /images/lil-easy-crawfish.webp
 stars: 1
 tags:
     - name: Restaurant

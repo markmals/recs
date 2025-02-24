@@ -1,7 +1,7 @@
 ---
 title: Distant Relatives
 link: https://www.distatantrelativesatx.com
-image: /images/distant-relatives.jpg
+image: /images/distant-relatives.webp
 stars: 2
 tags:
     - name: Restaurant

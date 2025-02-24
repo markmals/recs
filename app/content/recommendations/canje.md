@@ -1,7 +1,7 @@
 ---
 title: Canje
 link: https://canjeatx.com/
-image: /images/canje-wild-boar-pepperpot.jpg
+image: /images/canje-wild-boar-pepperpot.webp
 stars: 3
 tags:
     - name: Restaurant

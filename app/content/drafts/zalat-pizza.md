@@ -1,7 +1,7 @@
 ---
 title: Zalat Pizza
 link: https://order.zalatpizza.com/
-image: /images/zalat-buffalo-chicken-pizza.jpg
+image: /images/zalat-buffalo-chicken-pizza.webp
 stars: 0
 tags:
     - name: Restaurant
