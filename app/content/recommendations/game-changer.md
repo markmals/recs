@@ -14,6 +14,6 @@ From the company formerly known as College Humor, a fun and quirky game show whe
 
 <aside>
 
-Dropout is a fantastic, truly indie streamer with tons of other shows, many of which are actually Game Changer spin-offs. If you enjoy watching the cast of Game Changer, you'll love getting to know them better on [the other Dropout series](https://www.dropout.tv/recommended-new-shelf).
+Dropout is a fantastic, truly indie streamer with tons of other shows, many of which are actually Game Changer spin-offs. If you enjoy watching the cast of Game Changer, you'll love getting to know them better on [the other Dropout series](https://www.dropout.tv/new-releases).
 
 </aside>
