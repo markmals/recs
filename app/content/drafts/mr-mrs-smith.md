@@ -2,7 +2,7 @@
 title: Mr. & Mrs. Smith
 link: https://www.themoviedb.org/tv/118642-mr-mrs-smith
 image: https://image.tmdb.org/t/p/original/fUWvkg61yd5hi8P50MMztUhR03p.jpg
-stars: 2
+stars: 0
 tags:
     - name: TV Show
     - name: Watch Now
