@@ -5,6 +5,7 @@ image: https://i.imgur.com/970f8Y8.jpg
 stars: 3
 tags:
     - name: Restaurant
+    - name: Austin
     - name: Menu
       link: https://www.esteatx.com/menus/
 createdOn: 2023-06-05

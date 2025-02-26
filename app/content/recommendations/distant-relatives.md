@@ -5,6 +5,7 @@ image: /images/distant-relatives.webp
 stars: 2
 tags:
     - name: Restaurant
+    - name: Austin
     - name: Menu
       link: https://www.distatantrelativesatx.com/menu
 createdOn: 2023-08-27

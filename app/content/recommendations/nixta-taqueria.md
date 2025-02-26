@@ -5,6 +5,7 @@ image: https://i.imgur.com/ttoTUiI.jpg
 stars: 3
 tags:
     - name: Restaurant
+    - name: Austin
     - name: Menu
       link: https://nixtataqueria.com/menu
 createdOn: 2022-06-09

@@ -5,6 +5,7 @@ image: https://i.imgur.com/INjdoNH.jpg
 stars: 2
 tags:
     - name: Restaurant
+    - name: Austin
     - name: Menu
       link: https://veracruzfonda.com/food-menu
 createdOn: 2023-07-01
