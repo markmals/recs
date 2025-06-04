@@ -43,7 +43,8 @@
                     "options": {
                         "attributes": ["className"],
                         "functions": ["cva", "cx", "clsx"]
-                    }
+                    },
+                    "fix": "safe"
                 }
             },
             "performance": {
@@ -51,7 +52,7 @@
                 "useTopLevelRegex": "warn"
             },
             "style": {
-                "noNamespace": "error",
+                "noNamespace": "off",
                 "noNonNullAssertion": "off",
                 "useFragmentSyntax": "warn",
                 "useImportType": "error",
