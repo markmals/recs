@@ -43,7 +43,8 @@
                     "options": {
                         "attributes": ["className"],
                         "functions": ["cva", "cx", "clsx"]
-                    }
+                    },
+                    "fix": "safe"
                 }
             },
             "performance": {
