@@ -40,7 +40,7 @@ export function Options() {
                     No Stars
                 </button>
 
-                {RANGE.map(num => (
+                {RANGE.map((num) => (
                     <button
                         aria-label={`Show ${num} star recommendations`}
                         className={cx([
@@ -74,16 +74,14 @@ export function Options() {
 export function Filter() {
     return (
         <Disclosure
-            className={values =>
-                `${values.defaultClassName} border-t-2 border-black px-4 py-6 dark:border-white/50`
-            }
+            className={(values) =>
+                `${values.defaultClassName} border-t-2 border-black px-4 py-6 dark:border-white/50`}
         >
             <Form>
                 <Heading>
                     <Button
-                        className={values =>
-                            `${values.defaultClassName} flex w-full items-center gap-6 px-2 py-3 text-black/50 focus-visible:outline-0 dark:text-white/50`
-                        }
+                        className={(values) =>
+                            `${values.defaultClassName} flex w-full items-center gap-6 px-2 py-3 text-black/50 focus-visible:outline-0 dark:text-white/50`}
                         slot="trigger"
                     >
                         <Header />

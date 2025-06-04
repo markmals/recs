@@ -17,7 +17,7 @@ export async function loader({ request }: Route.LoaderArgs) {
     }
 
     const stars = new Stars(request);
-    const recs = collection.map(recommendation => ({
+    const recs = collection.map((recommendation) => ({
         ...recommendation.data,
         slug: recommendation.slug as string,
         description: recommendation.body,
@@ -52,9 +52,9 @@ export async function clientLoader({ request, serverLoader }: Route.ClientLoader
         const cachedRecs = await stores.cache.get(CACHE_KEY);
         return cachedRecs
             ? {
-                  stars: stars.count,
-                  filteredRecs: filterRecs({ recs: cachedRecs, stars }),
-              }
+                stars: stars.count,
+                filteredRecs: filterRecs({ recs: cachedRecs, stars }),
+            }
             : null;
     }
 
@@ -75,7 +75,7 @@ export default function Component({ loaderData }: Route.ComponentProps) {
             <div className="block sm:grid-cols-[3fr_2fr] lg:grid">
                 <div className="flex flex-col items-start gap-7 py-10">
                     <AnimatePresence>
-                        {loaderData.filteredRecs.map(rec => (
+                        {loaderData.filteredRecs.map((rec) => (
                             <motion.div className="w-full" key={rec.slug} layout>
                                 <Recommendation recommendation={rec} />
                             </motion.div>

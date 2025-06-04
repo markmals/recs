@@ -10,4 +10,7 @@ tags:
 createdOn: 2022-01-10
 ---
 
-The three creators of It’s Always Sunny in Philadelphia have a podcast! They host with fellow Sunny writer and Mythic Quest co-creator Megan Ganz and usually recap episodes of Sunny. However, my favorite episodes are the ones where one of the guys “comes in hot” with some topic to discuss or story to tell that derails the entire episode.
+The three creators of It’s Always Sunny in Philadelphia have a podcast! They host with fellow Sunny
+writer and Mythic Quest co-creator Megan Ganz and usually recap episodes of Sunny. However, my
+favorite episodes are the ones where one of the guys “comes in hot” with some topic to discuss or
+story to tell that derails the entire episode.

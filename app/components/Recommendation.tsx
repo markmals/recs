@@ -53,11 +53,9 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
                         {showStars && (
                             <Form>
                                 <button
-                                    aria-label={
-                                        starsQuery !== null
-                                            ? "Clear stars filter and show all reccomendations"
-                                            : `Show ${stars} star recommendations`
-                                    }
+                                    aria-label={starsQuery !== null
+                                        ? "Clear stars filter and show all reccomendations"
+                                        : `Show ${stars} star recommendations`}
                                     className="group flex content-center items-center gap-3"
                                     name={starsQuery !== null ? undefined : "stars"}
                                     type="submit"
@@ -81,7 +79,7 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
 
                 <div className="flex w-full flex-wrap items-center justify-between gap-4 pr-4">
                     <div className="flex items-center gap-3">
-                        {tags?.map(tag => <Token key={tag.name} tag={tag} />)}
+                        {tags?.map((tag) => <Token key={tag.name} tag={tag} />)}
                     </div>
                     <Link
                         className="font-serif-text hover:text-amber-500 hover:underline dark:hover:text-purple-600"

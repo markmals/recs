@@ -10,4 +10,6 @@ tags:
 createdOn: 2023-07-01
 ---
 
-A fast-paced season that will make you fall in love with gourmet restaurants and their inner-workings. Featuring a truly insane roster of guest stars, impressive writing, acting, and cinematography, The Bear has outdone itself. Somehow better than the first season.
+A fast-paced season that will make you fall in love with gourmet restaurants and their
+inner-workings. Featuring a truly insane roster of guest stars, impressive writing, acting, and
+cinematography, The Bear has outdone itself. Somehow better than the first season.

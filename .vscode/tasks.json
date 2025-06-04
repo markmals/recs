@@ -8,25 +8,25 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "dependsOn": ["npm: typecheck:watch", "npm: typegen:watch"],
+            "dependsOn": ["deno: typecheck:watch", "deno: typegen:watch"],
             "dependsOrder": "parallel"
         },
         // Display TypeScript issues across the project in the VS Code Problems panel natively
         {
-            "type": "npm",
-            "script": "typecheck:watch",
-            "group": "build",
-            "problemMatcher": ["$tsc-watch"],
-            "label": "npm: typecheck:watch",
-            "detail": "tsc --watch"
+            "type": "deno",
+            "command": "check",
+            "args": ["app", "--watch"],
+            "problemMatcher": ["$deno"],
+            "label": "deno: typecheck:watch",
+            "detail": "deno check app --watch"
         },
         {
-            "type": "npm",
-            "script": "typegen:watch",
-            "group": "build",
+            "type": "deno",
+            "command": "task",
+            "args": ["typegen", "--watch"],
             "problemMatcher": [],
-            "label": "npm: typegen:watch",
-            "detail": "react-router typegen --watch"
+            "label": "deno: typegen:watch",
+            "detail": "deno task typegen --watch"
         }
     ]
 }

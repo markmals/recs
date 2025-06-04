@@ -10,4 +10,7 @@ tags:
 createdOn: 2023-06-11
 ---
 
-A weird and quirky show about a machine that mysteriously appears in a small town which claims to be able to tell residents their “life’s potential.” Each episode focuses on a different townsperson, painting really interesting vignettes and giving you quality time with each character in a way you wouldn’t normally get. Josh Segarra is the stand-out, as he is in everything.
+A weird and quirky show about a machine that mysteriously appears in a small town which claims to be
+able to tell residents their “life’s potential.” Each episode focuses on a different townsperson,
+painting really interesting vignettes and giving you quality time with each character in a way you
+wouldn’t normally get. Josh Segarra is the stand-out, as he is in everything.

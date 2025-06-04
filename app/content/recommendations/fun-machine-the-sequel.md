@@ -10,4 +10,5 @@ tags:
 createdOn: 2022-09-30
 ---
 
-I had the opportunity to see Lake Street Dive live while they performed some of these covers this week. Amazing energy. Linger is such a great cover, as is Automatic.
+I had the opportunity to see Lake Street Dive live while they performed some of these covers this
+week. Amazing energy. Linger is such a great cover, as is Automatic.

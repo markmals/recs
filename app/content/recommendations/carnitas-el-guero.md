@@ -11,4 +11,5 @@ tags:
 createdOn: 2023-06-22
 ---
 
-A little taco spot on North Lamar with AMAZING carnitas. A plate piled high with a heaping helping of meat, a half-dozen tortillas, and assorted salsas is yours for about $12. What a deal.
+A little taco spot on North Lamar with AMAZING carnitas. A plate piled high with a heaping helping
+of meat, a half-dozen tortillas, and assorted salsas is yours for about $12. What a deal.

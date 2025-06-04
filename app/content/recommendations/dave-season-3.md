@@ -10,4 +10,6 @@ tags:
 createdOn: 2023-05-31
 ---
 
-Each season of Dave is somehow better than the last, but this one is really elevated. The guest stars, the stories, the performances from the core cast… Dave is out there looking for love, but he just can’t get out of his own way.
+Each season of Dave is somehow better than the last, but this one is really elevated. The guest
+stars, the stories, the performances from the core cast… Dave is out there looking for love, but he
+just can’t get out of his own way.

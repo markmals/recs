@@ -10,4 +10,9 @@ tags:
 createdOn: 2023-11-18
 ---
 
-I've thought these three boys were hilarious since they started uploading videos to Twitter during lockdown in 2020. I was ecstatic to see them hired by SNL, where we get to see a new, well produced short video from them nearly every week. I was skeptical that their 3 minute bits would hold up in a 90 minute form, but I think this film turned out fantastic. It has several laugh out loud moments that are only enhanced by other cast members, Meg Stalter, X Mayo, and Conan O'Brien (in his first film role not playing himself!), to mention a few.
+I've thought these three boys were hilarious since they started uploading videos to Twitter during
+lockdown in 2020. I was ecstatic to see them hired by SNL, where we get to see a new, well produced
+short video from them nearly every week. I was skeptical that their 3 minute bits would hold up in a
+90 minute form, but I think this film turned out fantastic. It has several laugh out loud moments
+that are only enhanced by other cast members, Meg Stalter, X Mayo, and Conan O'Brien (in his first
+film role not playing himself!), to mention a few.

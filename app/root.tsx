@@ -8,12 +8,12 @@ import {
 } from "react-router";
 
 import type { ReactNode } from "react";
-import { site } from "./lib/site";
+import { site } from "./lib/site.ts";
 import styles from "./styles/index.css?url";
 
-import type { Route } from "./+types/root";
+import type { Route } from "./+types/root.ts";
 
-export async function loader({ request }: Route.LoaderArgs) {
+export function loader({ request }: Route.LoaderArgs) {
     return { url: request.url };
 }
 
@@ -27,7 +27,7 @@ export const meta: Route.MetaFunction = ({ data }) => [
     { name: "og:type", content: "website" },
     { name: "og:image", content: site.socialMediaImage.dark },
     { name: "og:description", content: site.description },
-    { name: "og:url", content: data.url },
+    data?.url ? { name: "og:url", content: data.url } : {},
 
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: site.title },
@@ -70,10 +70,9 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
     if (isRouteErrorResponse(error)) {
         message = error.status === 404 ? "404" : "Error";
-        details =
-            error.status === 404
-                ? "The requested page could not be found."
-                : error.statusText || details;
+        details = error.status === 404
+            ? "The requested page could not be found."
+            : error.statusText || details;
     } else if (import.meta.env.DEV && error && error instanceof Error) {
         details = error.message;
         stack = error.stack;

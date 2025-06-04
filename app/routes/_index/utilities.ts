@@ -11,6 +11,6 @@ export class Stars {
 
 export function filterRecs({ recs, stars }: { recs: HydratedRec[]; stars: Stars }): HydratedRec[] {
     return recs
-        .filter(rec => (stars.count !== null ? rec.stars === stars.count : true))
+        .filter((rec) => (stars.count !== null ? rec.stars === stars.count : true))
         .sort((lhs, rhs) => rhs.createdOn.getTime() - lhs.createdOn.getTime());
 }

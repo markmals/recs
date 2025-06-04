@@ -1,16 +1,11 @@
 {
-    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "$schema": "https://biomejs.dev/schemas/2.0.0-beta.5/schema.json",
     "vcs": {
-        "enabled": false,
+        "enabled": true,
         "clientKind": "git",
-        "useIgnoreFile": false
+        "useIgnoreFile": true
     },
-    "formatter": {
-        "enabled": false
-    },
-    "organizeImports": {
-        "enabled": true
-    },
+    "formatter": { "enabled": false },
     "linter": {
         "enabled": true,
         "rules": {
@@ -21,30 +16,61 @@
                 "noUnusedPrivateClassMembers": "warn",
                 "useExhaustiveDependencies": "warn",
                 "useHookAtTopLevel": "error",
-                "noEmptyPattern": "warn"
+                "noEmptyPattern": "warn",
+                "noUnknownPseudoClass": "error",
+                "noUnknownPseudoElement": "error",
+                "noUnknownTypeSelector": "error"
             },
             "suspicious": {
-                "noEmptyInterface": "warn"
-            },
-            "complexity": {
-                "noBannedTypes": "warn"
-            },
-            "nursery": {
-                "noCommonJs": "warn",
+                "noEmptyInterface": "warn",
+                "noExplicitAny": "warn",
                 "noDocumentCookie": "error",
                 "noDuplicateCustomProperties": "error",
                 "noDuplicateElseIf": "error",
                 "noDuplicateProperties": "error",
-                "noEnum": "error",
                 "noIrregularWhitespace": "error",
-                "noSecrets": "error",
-                "noSubstr": "warn",
-                "noTemplateCurlyInString": "warn",
-                "noUnknownPseudoClass": "error",
-                "noUnknownPseudoElement": "error",
-                "noUnknownTypeSelector": "error",
+                "noTemplateCurlyInString": "warn"
+            },
+            "complexity": {
+                "noBannedTypes": "warn",
                 "noUselessEscapeInRegex": "warn",
-                "noUselessStringRaw": "warn",
+                "noUselessStringRaw": "warn"
+            },
+            "nursery": {
+                "noSecrets": "error",
+                "useSortedClasses": {
+                    "level": "error",
+                    "options": {
+                        "attributes": ["className"],
+                        "functions": ["cva", "cx", "clsx"]
+                    }
+                }
+            },
+            "performance": {
+                "noBarrelFile": "warn",
+                "useTopLevelRegex": "warn"
+            },
+            "style": {
+                "noNamespace": "error",
+                "noNonNullAssertion": "off",
+                "useFragmentSyntax": "warn",
+                "useImportType": "error",
+                "useNodejsImportProtocol": "error",
+                "useConsistentArrayType": { "level": "warn", "options": { "syntax": "shorthand" } },
+                "noParameterAssign": "error",
+                "useAsConstAssertion": "error",
+                "useDefaultParameterLast": "error",
+                "useEnumInitializers": "error",
+                "useSelfClosingElements": "error",
+                "useConst": "error",
+                "useSingleVarDeclarator": "error",
+                "noUnusedTemplateLiteral": "error",
+                "useNumberNamespace": "error",
+                "noInferrableTypes": "error",
+                "noUselessElse": "error",
+                "noCommonJs": "warn",
+                "noEnum": "error",
+                "noSubstr": "warn",
                 "useAtIndex": "warn",
                 "useCollapsedIf": "warn",
                 "useComponentExportOnlyModules": {
@@ -71,38 +97,34 @@
                         "accessibility": "none"
                     }
                 },
-                // TODO: Enable when this rule has feature-parity with prettier-plugin-tailwindcss
-                // https://github.com/biomejs/biome/issues/1274
-                // https://biomejs.dev/linter/rules/use-sorted-classes
-                "useSortedClasses": {
-                    "level": "off",
-                    "options": {
-                        "attributes": ["className"],
-                        "functions": ["cva", "cx", "clsx"]
-                    }
-                },
-                "useTrimStartEnd": "error",
+                "useTrimStartEnd": "error"
+            },
+            "a11y": {
                 "useValidAutocomplete": "error"
-            },
-            "performance": {
-                "noBarrelFile": "warn",
-                "useTopLevelRegex": "warn"
-            },
-            "style": {
-                "noNamespace": "off",
-                "noNonNullAssertion": "off",
-                "useFragmentSyntax": "warn",
-                "useImportType": "error",
-                "useNodejsImportProtocol": "error",
-                "useShorthandArrayType": "warn"
             }
         }
     },
-    "assists": {
+    "assist": {
         "actions": {
             "source": {
-                "sortJsxProps": "on"
+                "useSortedAttributes": "on",
+                "organizeImports": "on"
             }
         }
-    }
+    },
+    "overrides": [
+        {
+            "includes": [".vscode/**"],
+            "json": {
+                "parser": {
+                    "allowComments": true,
+                    "allowTrailingCommas": true
+                }
+            }
+        },
+        {
+            "includes": ["./.react-router/**"],
+            "linter": { "enabled": false }
+        }
+    ]
 }

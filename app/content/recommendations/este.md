@@ -11,4 +11,7 @@ tags:
 createdOn: 2023-06-05
 ---
 
-A new restaurant from Chef Fermín Núñez on the east side, focused on Mexican seafood. Needless to say, it’s incredible. Chef Fermín recommends the Camarones “El Ricas” (pictured) — butterflied shell-on shrimp, lime, chile costeño garlic butter, and cilantro — which are fantastic. Great fish taco options (on Suerte’s amazing blue corn tortillas) as well.
+A new restaurant from Chef Fermín Núñez on the east side, focused on Mexican seafood. Needless to
+say, it’s incredible. Chef Fermín recommends the Camarones “El Ricas” (pictured) — butterflied
+shell-on shrimp, lime, chile costeño garlic butter, and cilantro — which are fantastic. Great fish
+taco options (on Suerte’s amazing blue corn tortillas) as well.

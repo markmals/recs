@@ -10,4 +10,7 @@ tags:
 createdOn: 2023-08-19
 ---
 
-Season 2 is just as funny as season 1. A story about hustling and making it big in Miami, from killing snakes to farming prostate berries, Craig Robinson of “The Office” fame along with Claudia O'Doherty from Netflix's “Love” are a dynamic duo who take on local criminals, insane scam tycoons, and rich weirdos in the new season.
+Season 2 is just as funny as season 1. A story about hustling and making it big in Miami, from
+killing snakes to farming prostate berries, Craig Robinson of “The Office” fame along with Claudia
+O'Doherty from Netflix's “Love” are a dynamic duo who take on local criminals, insane scam tycoons,
+and rich weirdos in the new season.

@@ -10,4 +10,6 @@ tags:
 createdOn: 2023-04-30
 ---
 
-A mockumentary show about jury duty where one person doesn’t know he’s on a TV show. A super interesting take on this style of show, with amazing performances from everyone involved, but especially James Marsden.
+A mockumentary show about jury duty where one person doesn’t know he’s on a TV show. A super
+interesting take on this style of show, with amazing performances from everyone involved, but
+especially James Marsden.

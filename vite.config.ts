@@ -1,19 +1,23 @@
+import deno from "@deno/vite-plugin";
+import { reactRouter } from "@react-router/dev/vite";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 
-import { reactRouter } from "@react-router/dev/vite";
-import { cloudflareDevProxy } from "@react-router/dev/vite/cloudflare";
-
-import tailwindcss from "@tailwindcss/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
-
-export default defineConfig(({ isSsrBuild, command }) => ({
-    plugins: [cloudflareDevProxy(), reactRouter(), tailwindcss(), tsconfigPaths()],
-    build: {
-        rollupOptions: isSsrBuild ? { input: "./workers/app.ts" } : undefined,
+export default defineConfig({
+    plugins: [
+        deno(),
+        reactRouter(),
+        tailwindcss(),
+    ],
+    environments: {
+        ssr: {
+            build: {
+                target: "ESNext",
+            },
+            resolve: {
+                conditions: ["deno"],
+                externalConditions: ["deno"],
+            },
+        },
     },
-    // FIXME: Why do I need this alias when the default CF template does not?
-    resolve:
-        command === "build"
-            ? { alias: { "react-dom/server": "react-dom/server.edge" } }
-            : undefined,
-}));
+});

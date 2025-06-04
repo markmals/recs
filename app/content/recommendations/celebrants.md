@@ -10,4 +10,5 @@ tags:
 createdOn: 2023-03-20
 ---
 
-Nickel Creek makes an album together about once every ten years and each one is a treasure. This one is particularly great, with Strangers pulling ahead as my favorite track of 2023.
+Nickel Creek makes an album together about once every ten years and each one is a treasure. This one
+is particularly great, with Strangers pulling ahead as my favorite track of 2023.

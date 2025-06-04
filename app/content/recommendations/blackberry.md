@@ -10,4 +10,6 @@ tags:
 createdOn: 2023-05-27
 ---
 
-An incredible film about the rise and fall of a monumental company and the people who shaped the modern smartphone. Perhaps the most well-made big tech origin docudrama I’ve seen. Glenn Howerton’s performance as an Angry Man is unmatched.
+An incredible film about the rise and fall of a monumental company and the people who shaped the
+modern smartphone. Perhaps the most well-made big tech origin docudrama I’ve seen. Glenn Howerton’s
+performance as an Angry Man is unmatched.
