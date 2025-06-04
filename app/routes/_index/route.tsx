@@ -25,7 +25,13 @@ export async function loader({ request }: Route.LoaderArgs) {
     }));
 
     const tags = Array.from(
-        new Set(recs.flatMap((rec) => rec.tags?.map((t) => t.name) ?? [])),
+        new Set(
+            recs.flatMap((rec) =>
+                (rec.tags ?? [])
+                    .filter((tag) => !tag.link)
+                    .map((tag) => tag.name)
+            ),
+        ),
     );
 
     return {
@@ -66,7 +72,13 @@ export async function clientLoader({ request, serverLoader }: Route.ClientLoader
                 stars: stars.count,
                 tag: tagFilter.name,
                 tags: Array.from(
-                    new Set(cachedRecs.flatMap((rec) => rec.tags?.map((t) => t.name) ?? [])),
+                    new Set(
+                        cachedRecs.flatMap((rec) =>
+                            (rec.tags ?? [])
+                                .filter((tag) => !tag.link)
+                                .map((tag) => tag.name)
+                        ),
+                    ),
                 ),
                 filteredRecs: filterRecs({ recs: cachedRecs, stars, tag: tagFilter }),
             }

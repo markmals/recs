@@ -23,28 +23,23 @@ export function Options() {
 
     return (
         <DisclosurePanel>
-            <div className="flex flex-col gap-6 pt-4">
+            <div className="flex flex-wrap gap-3 pl-11 pt-4">
                 {tags.map((name: string) => (
-                    <button
+                    <TokenButton
                         aria-label={`Show ${name} recommendations`}
-                        className={cx([
-                            "pl-11 text-left font-serif-text text-xl hover:opacity-100",
-                            tag === name ? "opacity-100" : "opacity-50",
-                        ])}
+                        className={cx(tag === name ? undefined : "opacity-50")}
                         key={name}
                         name="tag"
                         type="submit"
                         value={name}
                     >
                         {name}
-                    </button>
+                    </TokenButton>
                 ))}
-                <div className="pl-11">
-                    <TokenButton
-                        aria-label="Clear tag filter and show all recommendations"
-                        label="Clear"
-                    />
-                </div>
+                <TokenButton
+                    aria-label="Clear tag filter and show all recommendations"
+                    label="Clear"
+                />
             </div>
         </DisclosurePanel>
     );
