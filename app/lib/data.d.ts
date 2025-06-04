@@ -1,16 +1,5 @@
-export interface Recommendation {
-    title: string
-    link: string
-    image: string
-    stars: number
-    description: string
-    tags: Tag[]
-    createdOn: Date
-    slug: string
-}
+import type { getCollection } from "../lib/content";
 
-export interface Tag {
-    name: string
-    link?: string
-    // icon?: ReactNode
-}
+export type Recommendation = Awaited<ReturnType<typeof getCollection<"recommendations">>>[number];
+export type HydratedRec = Recommendation["data"] & { slug: string; description: string };
+export type Tag = Exclude<Recommendation["data"]["tags"], undefined>[number];

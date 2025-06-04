@@ -10,4 +10,6 @@ tags:
 createdOn: 2023-05-30
 ---
 
-A show about a hitman turned actor. Barry has a lot of industry jokes that you might not get if you’re not familiar with the inner-workings of Hollywood, but it’s hilarious nonetheless. There were several episodes where I was laughing so hard I couldn’t catch my breath.
+A show about a hitman turned actor. Barry has a lot of industry jokes that you might not get if
+you’re not familiar with the inner-workings of Hollywood, but it’s hilarious nonetheless. There were
+several episodes where I was laughing so hard I couldn’t catch my breath.

@@ -1,8 +1,13 @@
-node_modules
-
-/.cache
-/build
-/public/build
-.env
-.output
 .DS_Store
+/node_modules/
+*.tsbuildinfo
+
+# React Router
+/.react-router/
+/build/
+
+# Cloudflare
+.mf
+.wrangler
+
+.eslintcache

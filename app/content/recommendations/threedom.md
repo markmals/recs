@@ -10,4 +10,7 @@ tags:
 createdOn: 2023-06-29
 ---
 
-Lauren Lapkus, Paul F. Tompkins, and Scott Aukerman — three comedians and real-life friends who have performed numerous times together — tell stories from their past and present while joking with each other. Listening to this podcast feels like spending time with good friends. My all-time favorite podcast.
+Lauren Lapkus, Paul F. Tompkins, and Scott Aukerman — three comedians and real-life friends who have
+performed numerous times together — tell stories from their past and present while joking with each
+other. Listening to this podcast feels like spending time with good friends. My all-time favorite
+podcast.

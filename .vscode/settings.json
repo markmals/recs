@@ -1,0 +1,77 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    "editor.stickyScroll.enabled": true,
+
+    "deno.enable": true,
+    "biome.enabled": true,
+
+    "prettier.enable": false,
+    "eslint.enable": false,
+
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.addMissingImports": "explicit",
+        "source.fixAll.biome": "explicit",
+        "source.fixAll.ts": "explicit"
+    },
+
+    "editor.defaultFormatter": "denoland.vscode-deno",
+    "editor.formatOnSave": true,
+
+    // Language-specific settings
+    "[typescript]": { "editor.defaultFormatter": "denoland.vscode-deno" },
+    "[tsx]": { "editor.defaultFormatter": "denoland.vscode-deno" },
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": { "comments": "off", "strings": "off", "other": "off" },
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "denoland.vscode-deno"
+    },
+    "[json]": { "editor.defaultFormatter": "denoland.vscode-deno" },
+    "[jsonc]": { "editor.defaultFormatter": "denoland.vscode-deno" },
+    "[yaml]": { "editor.defaultFormatter": "denoland.vscode-deno" },
+
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        "*.css": "$(capture).css.map, $(capture).*.css",
+        ".env": "*.env, .env.*",
+        ".env.local": "*.env, .env.*",
+        "deno.json*": ".github*, .vscode*, .prettier*, prettier*, workspace.json, *.lock, biome.json*, package.json",
+        "readme*": "authors, backers*, changelog*, citation*, code_of_conduct*, codeowners, contributing*, contributors, copying, credits, governance.md, history.md, license*, maintainers, readme*, security.md, sponsors*",
+        "*.ts": "$(capture).ts.map, $(capture).*.ts, $(capture)_*.ts",
+        "*.tsx": "$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx",
+        "vite.config.*": "drizzle.config.*, react-router.config.*, vitest.config.*, *.plugin.ts"
+    },
+
+    // Which files to hide in the VS Code file-tree sidebar
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "build": true,
+        ".react-router": true,
+        "package.json": true
+    },
+
+    "tailwindCSS.experimental.classRegex": [
+        ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+        ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+        ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    ],
+    "tailwindCSS.classAttributes": ["className"],
+
+    "todohighlight.keywords": [
+        "MARK:",
+        { "text": "FIXME:", "backgroundColor": "#F14848" },
+        { "text": "TODO:", "backgroundColor": "#3593FF" }
+    ],
+    "todohighlight.defaultStyle": {
+        "backgroundColor": "#434B54",
+        "color": "#fff",
+        "borderRadius": "2px"
+    }
+}

@@ -10,4 +10,5 @@ tags:
 createdOn: 2023-04-07
 ---
 
-The revival is better than the original. I think there were laugh-out-loud moments in every single episode of this new season for me. Ken Marino steals the show.
+The revival is better than the original. I think there were laugh-out-loud moments in every single
+episode of this new season for me. Ken Marino steals the show.

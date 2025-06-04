@@ -10,4 +10,7 @@ tags:
 createdOn: 2023-06-07
 ---
 
-A show about a relationship that feels all too familiar. I think I’ve had this type of close friendship a half-dozen times over the last 10-ish years of my life and it has consistently been my favorite. This show is a half-hour of remembering all those good feelings. Shout-out to the women in my life and all the goofy fun we’ve had together ✌️
+A show about a relationship that feels all too familiar. I think I’ve had this type of close
+friendship a half-dozen times over the last 10-ish years of my life and it has consistently been my
+favorite. This show is a half-hour of remembering all those good feelings. Shout-out to the women in
+my life and all the goofy fun we’ve had together ✌️

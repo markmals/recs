@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/styles/fonts.css"],
+  "sourcesContent": ["@import url(\"https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap\");\n\n@font-face {\n    font-family: \"Roslindale Display\";\n    src: url(\"/fonts/Roslindale-DisplayCondensedBold.woff2\");\n    font-weight: bold;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: \"Roslindale Display\";\n    src: url(\"/fonts/Roslindale-DisplayCondensedBoldItalic.woff2\");\n    font-weight: bold;\n    font-style: italic;\n}\n\n@font-face {\n    font-family: \"Roslindale Text\";\n    src: url(\"/fonts/Roslindale-TextBold.woff2\");\n    font-weight: bold;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: \"Roslindale Text\";\n    src: url(\"/fonts/Roslindale-TextBoldItalic.woff2\");\n    font-weight: bold;\n    font-style: italic;\n}\n\n@font-face {\n    font-family: \"Roslindale Text\";\n    src: url(\"/fonts/Roslindale-TextItalic.woff2\");\n    font-weight: normal;\n    font-style: italic;\n}\n\n@font-face {\n    font-family: \"Roslindale Text\";\n    src: url(\"/fonts/Roslindale-TextRegular.woff2\");\n    font-weight: normal;\n    font-style: normal;\n}\n"],
+  "mappings": ";;;AAEA;AACI;AACA;AACA;AACA;;AAGJ;AACI;AACA;AACA;AACA;;AAGJ;AACI;AACA;AACA;AACA;;AAGJ;AACI;AACA;AACA;AACA;;AAGJ;AACI;AACA;AACA;AACA;;AAGJ;AACI;AACA;AACA;AACA;;",
+  "names": []
+}

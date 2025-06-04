@@ -10,4 +10,6 @@ tags:
 createdOn: 2023-06-18
 ---
 
-I love anything post-apocalyptic and Silo most certainly fits that bill. With an actually compelling cliffhanger each episode and the right kind of sci-fi/dystopian vibes, this show is great if you’re looking for your next drama.
+I love anything post-apocalyptic and Silo most certainly fits that bill. With an actually compelling
+cliffhanger each episode and the right kind of sci-fi/dystopian vibes, this show is great if you’re
+looking for your next drama.

@@ -10,4 +10,8 @@ tags:
 createdOn: 2023-09-27
 ---
 
-There's been a small trend of new TV shows being written by and starring indigenous people in the past few years and I'm really glad because the writing and acting is amazing and the stories are hilarious and I'm learning a lot about a culture I didn't know a lot about. Reservation Dogs is, perhaps, the best of this new wave of shows. It's funny and heartfelt and engaging and real. It's final season just finished airing and was incredible. I can't recommend it enough.
+There's been a small trend of new TV shows being written by and starring indigenous people in the
+past few years and I'm really glad because the writing and acting is amazing and the stories are
+hilarious and I'm learning a lot about a culture I didn't know a lot about. Reservation Dogs is,
+perhaps, the best of this new wave of shows. It's funny and heartfelt and engaging and real. It's
+final season just finished airing and was incredible. I can't recommend it enough.

@@ -5,9 +5,14 @@ image: https://image.tmdb.org/t/p/original/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg
 stars: 2
 tags:
     - name: Movie
-    # - name: Watch Now
-    #   link: 
+    - name: Watch Now
+      link: https://www.hulu.com/movie/poor-things-72867b3c-0c4e-4107-aff7-a1f876c7242f
 createdOn: 2024-01-20
 ---
 
-Yorgos Lanthimos is known for his strange films, so I went into this one expecting more of the same. And it was strange, but not an an unapprochable way like some of his earlier films. The set design was fantastic, especially the bright streets of Lisbon. The fish eye shots are used to great effect. And, [as someone who was also fairly recently diagnosed with autism](https://letterboxd.com/demiadejuyigbe/film/poor-things-2023/), I appreciated the (intentional or not) spectrum parallels in the movie as well.
+Yorgos Lanthimos is known for his strange films, so I went into this one expecting more of the same.
+And it was strange, but not an an unapprochable way like some of his earlier films. The set design
+was fantastic, especially the bright streets of Lisbon. The fish eye shots are used to great effect.
+And,
+[as someone who was also fairly recently diagnosed with autism](https://letterboxd.com/demiadejuyigbe/film/poor-things-2023/),
+I appreciated the (intentional or not) spectrum parallels in the movie as well.

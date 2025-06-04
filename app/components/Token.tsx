@@ -1,32 +1,32 @@
-import { cva } from "cva"
-import { ReactNode } from "react"
-import { Link } from "react-router-dom"
-import type { Tag } from "~/lib/data"
-import type { ClassProps } from "~/lib/props"
+import { cva } from "cva";
+import type { ReactNode } from "react";
+import { Link } from "react-router";
+import type { Tag } from "~/lib/data";
+import type { ClassProps } from "~/lib/props";
 
-export type HTMLAttributeAnchorTarget = "_self" | "_blank" | "_parent" | "_top" | string
-
-export namespace Token {
-    export interface Props extends ClassProps {
-        tag: Tag
-        target?: HTMLAttributeAnchorTarget
-    }
-}
+export type HTMLAttributeAnchorTarget = "_self" | "_blank" | "_parent" | "_top" | string;
 
 const token = cva({
-    base: "rounded-lg shadow-hard border-2 font-serif-text border-black p-2 bg-amber-500 dark:bg-purple-600",
+    base:
+        "rounded-lg border-2 border-black bg-amber-500 p-2 font-serif-text shadow-hard dark:bg-purple-600",
     variants: {
         type: {
             button: "hover:bg-amber-600 dark:hover:bg-purple-800",
         },
     },
-})
+});
+
+export namespace Token {
+    export interface Props extends ClassProps {
+        tag: Tag;
+        target?: HTMLAttributeAnchorTarget;
+    }
+}
 
 export function Token({ tag, className = undefined, target = "_blank" }: Token.Props) {
-    let hasLink = !!tag.link
-
-    if (hasLink) {
-        return (
+    const hasLink = !!tag.link;
+    return hasLink
+        ? (
             <Link
                 className={token({ type: "button", className })}
                 rel="noreferrer"
@@ -37,36 +37,36 @@ export function Token({ tag, className = undefined, target = "_blank" }: Token.P
                 {/* {icon} */}
             </Link>
         )
-    }
-
-    return (
-        <span className={token({ className })}>
-            {tag.name}
-            {/* {icon} */}
-        </span>
-    )
+        : (
+            <span className={token({ className })}>
+                {tag.name}
+                {/* {icon} */}
+            </span>
+        );
 }
 
 export namespace TokenButton {
-    export type Props = ClassProps &
-        (
+    export type Props =
+        & ClassProps
+        & (
             | { label: string; "aria-label": string; children?: undefined }
-            | { children: ReactNode[] | ReactNode; label?: undefined }
-        ) & {
-            "aria-label"?: string
-            name?: string
-            value?: string
-            onClick?: () => void
-            type?: "button" | "submit" | "reset"
-        }
+            | { children: ReactNode; label?: undefined }
+        )
+        & {
+            "aria-label"?: string;
+            name?: string;
+            value?: string;
+            onClick?: () => void;
+            type?: "button" | "submit" | "reset";
+        };
 }
 
 export function TokenButton(props: TokenButton.Props) {
-    let children = props.label || props.children
+    const children = props.label || props.children;
     return (
-        <button className={token({ type: "button" })} {...props}>
+        <button className={token({ type: "button" })} type="submit" {...props}>
             {children}
             {/* {icon} */}
         </button>
-    )
+    );
 }

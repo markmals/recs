@@ -1,0 +1,68 @@
+{
+    "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
+    "nodeModulesDir": "auto",
+    "unstable": ["sloppy-imports"],
+    "tasks": {
+        "dev": "deno run -A npm:vite dev --host",
+        "build": "deno run -A npm:vite build",
+        "serve": {
+            "command": "deno run -A ./serve.ts",
+            "dependencies": ["build"]
+        },
+        "fmt": "deno fmt .",
+        "lint": "deno run -A npm:@biomejs/biome@^2.0.0-beta.5 check --write --unsafe --assist-enabled=true .",
+        "check": {
+            "dependencies": ["fmt", "lint"]
+        },
+        "typegen": "deno run -A npm:@react-router/dev typegen",
+        "typecheck": {
+            "command": "deno check app",
+            "dependencies": ["typegen"]
+        }
+    },
+    "imports": {
+        "~/": "./app/",
+
+        "@deno/vite-plugin": "npm:@deno/vite-plugin@1.0.4",
+        "@heroicons/react": "npm:@heroicons/react@^2.2.0",
+        "@react-router/dev": "npm:@react-router/dev@^7.6.1",
+        "@react-router/fs-routes": "npm:@react-router/fs-routes@^7.6.1",
+        "@react-router/serve": "npm:@react-router/serve@^7.6.1",
+        "@std/http": "jsr:@std/http@^1.0.17",
+        "@std/path": "jsr:@std/path@^1.0.8",
+        "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.0.12",
+        "@types/react": "npm:@types/react@^19.1.6",
+        "@types/react-dom": "npm:@types/react-dom@^19.1.5",
+        "cva": "npm:cva@^1.0.0-beta.3",
+        "devalue": "npm:devalue@^5.1.1",
+        "front-matter": "npm:front-matter@^4.0.2",
+        "idb-keyval": "npm:idb-keyval@^6.2.1",
+        "isbot": "npm:isbot@^5.1.23",
+        "marked": "npm:marked@^15.0.7",
+        "motion": "npm:motion@^12.4.10",
+        "react": "npm:react@^19.1.0",
+        "react-aria-components": "npm:react-aria-components@^1.7.0",
+        "react-dom": "npm:react-dom@^19.1.0",
+        "react-router": "npm:react-router@^7.6.1",
+        "valibot": "npm:valibot@^1.0.0-rc.3",
+        "tailwindcss": "npm:tailwindcss@^4.0.12",
+        "vite": "npm:vite@^6.3.5"
+    },
+    "compilerOptions": {
+        "strict": true,
+        "lib": ["Deno.NS", "DOM", "DOM.Iterable", "ES2022"],
+        "jsx": "react-jsx",
+        "types": ["vite/client"],
+        "rootDirs": [".", "./.react-router/types"],
+        "checkJs": true,
+        "verbatimModuleSyntax": true
+    },
+    "fmt": {
+        "indentWidth": 4,
+        "lineWidth": 100,
+        "singleQuote": false,
+        "proseWrap": "always"
+    },
+    // Disable Deno Lint; use Biome instead
+    "lint": { "exclude": ["./"] }
+}
