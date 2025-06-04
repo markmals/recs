@@ -52,7 +52,7 @@
                 "useTopLevelRegex": "warn"
             },
             "style": {
-                "noNamespace": "error",
+                "noNamespace": "off",
                 "noNonNullAssertion": "off",
                 "useFragmentSyntax": "warn",
                 "useImportType": "error",
