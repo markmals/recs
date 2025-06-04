@@ -52,6 +52,7 @@
         "strict": true,
         "lib": ["Deno.NS", "DOM", "DOM.Iterable", "ES2022"],
         "jsx": "react-jsx",
+        "jsxImportSource": "react",
         "types": ["vite/client"],
         "rootDirs": [".", "./.react-router/types"],
         "checkJs": true,
