@@ -1,13 +1,13 @@
 import { ArrowPathIcon, ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import { AnimatePresence, motion } from "motion/react";
 import { isRouteErrorResponse, useNavigate } from "react-router";
-import { Recommendation } from "~/components/Recommendation";
 import { Filters } from "~/components/filters/Filters";
+import { Recommendation } from "~/components/Recommendation";
 import { getCollection } from "~/lib/content";
 import { stores } from "~/lib/stores.client";
-import { filterRecs, Stars } from "./utilities";
-import type { Route } from "./+types/route";
 import { TokenButton } from "../../components/Token";
+import type { Route } from "./+types/route";
+import { filterRecs, Query, Stars } from "./utilities";
 
 export async function loader({ request }: Route.LoaderArgs) {
     let collection = await getCollection("recommendations");
@@ -17,6 +17,7 @@ export async function loader({ request }: Route.LoaderArgs) {
     }
 
     const stars = new Stars(request);
+    const query = new Query(request);
     const recs = collection.map((recommendation) => ({
         ...recommendation.data,
         slug: recommendation.slug as string,
@@ -25,10 +26,12 @@ export async function loader({ request }: Route.LoaderArgs) {
 
     return {
         stars: stars.count,
+        query: query.value,
         recs,
         filteredRecs: filterRecs({
             recs,
-            stars,
+            stars: stars.count,
+            query: query.value,
         }),
     };
 }
@@ -38,13 +41,19 @@ const CACHE_KEY = "recommendations";
 
 export async function clientLoader({ request, serverLoader }: Route.ClientLoaderArgs) {
     const stars = new Stars(request);
+    const query = new Query(request);
 
     async function fetchData() {
         const { recs } = await serverLoader();
         await stores.cache.set(CACHE_KEY, recs);
         return {
             stars: stars.count,
-            filteredRecs: filterRecs({ recs, stars }),
+            query: query.value,
+            filteredRecs: filterRecs({
+                recs,
+                stars: stars.count,
+                query: query.value,
+            }),
         };
     }
 
@@ -53,7 +62,12 @@ export async function clientLoader({ request, serverLoader }: Route.ClientLoader
         return cachedRecs
             ? {
                 stars: stars.count,
-                filteredRecs: filterRecs({ recs: cachedRecs, stars }),
+                query: query.value,
+                filteredRecs: filterRecs({
+                    recs: cachedRecs,
+                    stars: stars.count,
+                    query: query.value,
+                }),
             }
             : null;
     }
@@ -71,7 +85,7 @@ export default function Component({ loaderData }: Route.ComponentProps) {
         <div className="noise-container p-6">
             <div className="noise" />
             <div className="noise-underlay" />
-            <h1 className="font-serif-display text-5xl font-bold sm:text-6xl">Recommendations</h1>
+            <h1 className="font-bold font-serif-display text-5xl sm:text-6xl">Recommendations</h1>
             <div className="block sm:grid-cols-[3fr_2fr] lg:grid">
                 <div className="flex flex-col items-start gap-7 py-10">
                     <AnimatePresence>
@@ -106,7 +120,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     return (
         <div className="flex h-screen flex-col justify-center px-4 py-6 text-center sm:px-64 sm:py-8">
             <ExclamationTriangleIcon className="mx-auto h-12 w-12 text-amber-500 dark:text-purple-500" />
-            <h3 className="mt-2 font-sans text-4xl font-semibold text-amber-950 dark:text-purple-200">
+            <h3 className="mt-2 font-sans font-semibold text-4xl text-amber-950 dark:text-purple-200">
                 {message}
             </h3>
             <p className="mt-1 font-serif-text text-amber-950 dark:text-purple-200">
@@ -115,7 +129,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
             <div className="mt-6">
                 <TokenButton onClick={() => navigate(0)} type="button">
                     <div className="flex flex-row items-center">
-                        <ArrowPathIcon aria-hidden="true" className="mr-1.5 -ml-0.5 h-5 w-5" />
+                        <ArrowPathIcon aria-hidden="true" className="-ml-0.5 mr-1.5 h-5 w-5" />
                         Refresh
                     </div>
                 </TokenButton>

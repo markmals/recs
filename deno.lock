@@ -24,6 +24,7 @@
     "npm:cva@^1.0.0-beta.3": "1.0.0-beta.4",
     "npm:devalue@^5.1.1": "5.1.1",
     "npm:front-matter@^4.0.2": "4.0.2",
+    "npm:fuse.js@^6.6.2": "6.6.2",
     "npm:idb-keyval@^6.2.1": "6.2.2",
     "npm:isbot@^5.1.23": "5.1.28",
     "npm:marked@^15.0.7": "15.0.12",
@@ -2882,6 +2883,9 @@
     "function-bind@1.1.2": {
       "integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA=="
     },
+    "fuse.js@6.6.2": {
+      "integrity": "sha512-cJaJkxCCxC8qIIcPBF9yGxY0W/tVZS3uEISDxhYIdtk8OL93pe+6Zj7LjCqVV4dzbqcriOZ+kQ/NE4RXZHsIGA=="
+    },
     "gensync@1.0.0-beta.2": {
       "integrity": "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg=="
     },
@@ -3871,6 +3875,7 @@
       "npm:cva@^1.0.0-beta.3",
       "npm:devalue@^5.1.1",
       "npm:front-matter@^4.0.2",
+      "npm:fuse.js@^6.6.2",
       "npm:idb-keyval@^6.2.1",
       "npm:isbot@^5.1.23",
       "npm:marked@^15.0.7",
