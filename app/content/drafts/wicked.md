@@ -7,6 +7,7 @@ tags:
     - name: Movie
     - name: Watch Now
       link: https://tv.apple.com/us/movie/wicked/umc.cmc.2y47u72bw6uhh0g4zpgxkvatk
+      icon: PlayIcon
 createdOn: 2024-12-07
 ---
 

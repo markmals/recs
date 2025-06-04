@@ -7,6 +7,7 @@ tags:
     - name: Movie
     - name: Watch Now
       link: https://tv.apple.com/us/movie/blackberry/umc.cmc.3l1hmmtt33myfoyr38vfg85js
+      icon: PlayIcon
 createdOn: 2023-05-27
 ---
 

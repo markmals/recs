@@ -8,5 +8,6 @@ tags:
     - name: Austin
     - name: Menu
       link: https://www.pollosasadoselnorteno.com/s/order
+      icon: DocumentTextIcon
 createdOn: 2024-05-11
 ---

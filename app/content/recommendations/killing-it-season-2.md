@@ -7,6 +7,7 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.peacocktv.com/watch-online/tv/killing-it/5156438808822262112/seasons/2
+      icon: PlayIcon
 createdOn: 2023-08-19
 ---
 

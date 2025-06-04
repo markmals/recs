@@ -7,6 +7,7 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.max.com/shows/179bdb1c-83f8-4ab7-87ef-47ce3b566a13
+      icon: PlayIcon
 createdOn: 2023-05-30
 ---
 

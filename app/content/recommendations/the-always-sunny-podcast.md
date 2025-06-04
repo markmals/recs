@@ -7,6 +7,7 @@ tags:
     - name: Podcast
     - name: Listen Now
       link: https://podcasts.apple.com/us/podcast/rob-almost-fights-some-guy-outside-a-hamburger-store/id1594627983?i=1000547394247
+      icon: SpeakerWaveIcon
 createdOn: 2022-01-10
 ---
 

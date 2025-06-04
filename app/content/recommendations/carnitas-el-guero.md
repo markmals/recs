@@ -8,6 +8,7 @@ tags:
     - name: Austin
     - name: Menu
       link: https://carnitaselguero.com/menu/
+      icon: DocumentTextIcon
 createdOn: 2023-06-22
 ---
 

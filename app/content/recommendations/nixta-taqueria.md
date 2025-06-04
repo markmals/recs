@@ -8,6 +8,7 @@ tags:
     - name: Austin
     - name: Menu
       link: https://nixtataqueria.com/menu
+      icon: DocumentTextIcon
 createdOn: 2022-06-09
 ---
 

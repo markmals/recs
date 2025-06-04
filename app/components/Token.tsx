@@ -1,6 +1,7 @@
 import { cva } from "cva";
-import type { ReactNode } from "react";
+import type { ReactNode, SVGProps } from "react";
 import { Link } from "react-router";
+import * as HeroIcons from "@heroicons/react/20/solid";
 import type { Tag } from "~/lib/data";
 import type { ClassProps } from "~/lib/props";
 
@@ -25,6 +26,10 @@ export namespace Token {
 
 export function Token({ tag, className = undefined, target = "_blank" }: Token.Props) {
     const hasLink = !!tag.link;
+    const Icon = hasLink && tag.icon
+        ? (HeroIcons as Record<string, (props: SVGProps<SVGSVGElement>) => JSX.Element>)[tag.icon]
+        : undefined;
+    const icon = Icon ? <Icon aria-hidden={true} className="ml-1 inline h-4 w-4" /> : null;
     return hasLink
         ? (
             <Link
@@ -34,13 +39,13 @@ export function Token({ tag, className = undefined, target = "_blank" }: Token.P
                 to={tag.link!}
             >
                 {tag.name}
-                {/* {icon} */}
+                {icon}
             </Link>
         )
         : (
             <span className={token({ className })}>
                 {tag.name}
-                {/* {icon} */}
+                {icon}
             </span>
         );
 }

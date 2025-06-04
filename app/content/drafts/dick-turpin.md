@@ -7,5 +7,6 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://tv.apple.com/us/show/the-completely-made-up-adventures-of-dick-turpin/umc.cmc.37r7vskzmm8hk2pfbzaxlcwzg
+      icon: PlayIcon
 createdOn: 2024-05-27
 ---

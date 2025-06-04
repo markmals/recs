@@ -8,6 +8,7 @@ tags:
     - name: Houston
     - name: Menu
       link: https://www.crawfishcafe.com/menu
+      icon: DocumentTextIcon
 createdOn: 2024-04-14
 ---
 

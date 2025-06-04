@@ -7,5 +7,6 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.amazon.com/gp/video/detail/0GGVBZ2IQIX1FGSIINDQOQPNHI
+      icon: PlayIcon
 createdOn: 2024-08-12
 ---

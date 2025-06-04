@@ -7,6 +7,7 @@ tags:
     - name: Album
     - name: Listen Now
       link: https://open.spotify.com/album/2ruZGj3O7oL91f9re3BXLq
+      icon: SpeakerWaveIcon
 createdOn: 2023-03-20
 ---
 
