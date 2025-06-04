@@ -7,6 +7,7 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.starz.com/us/en/series/party-down/season-3/68559
+      icon: PlayIcon
 createdOn: 2023-04-07
 ---
 

@@ -8,5 +8,6 @@ tags:
     - name: Austin
     - name: Menu
       link: https://pedrosos-pizza.square.site/
+      icon: DocumentTextIcon
 createdOn: 2024-08-14
 ---

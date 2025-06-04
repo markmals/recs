@@ -7,6 +7,7 @@ tags:
     - name: Movie
     - name: Watch Now
       link: https://www.peacocktv.com/stream-movies/please-dont-destroy-treasure-of-foggy-mountain
+      icon: PlayIcon
 createdOn: 2023-11-18
 ---
 

@@ -7,5 +7,6 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://tv.apple.com/us/show/shrinking/umc.cmc.apzybj6eqf6pzccd97kev7bs
+      icon: PlayIcon
 createdOn: 2024-12-10
 ---

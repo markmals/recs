@@ -7,6 +7,7 @@ tags:
     - name: Movie
     - name: Watch Now
       link: https://www.hulu.com/movie/poor-things-72867b3c-0c4e-4107-aff7-a1f876c7242f
+      icon: PlayIcon
 createdOn: 2024-01-20
 ---
 

@@ -8,6 +8,7 @@ tags:
     - name: Austin
     - name: Menu
       link: https://canjeatx.com/menus
+      icon: DocumentTextIcon
 createdOn: 2024-01-09
 ---
 

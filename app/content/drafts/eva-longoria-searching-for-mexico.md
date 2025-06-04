@@ -7,5 +7,6 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.max.com/shows/eva-longoria-searching-for-mexico/9ea3dc54-cd41-4d97-b592-29911903c3a7
+      icon: PlayIcon
 createdOn: 2024-10-02
 ---

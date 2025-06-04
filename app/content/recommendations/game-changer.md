@@ -7,6 +7,7 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.dropout.tv/game-changer
+      icon: PlayIcon
 createdOn: 2023-12-17
 ---
 

@@ -7,6 +7,7 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://tv.apple.com/us/show/platonic/umc.cmc.y7bc18x7co813l8i2tlsyb4l
+      icon: PlayIcon
 createdOn: 2023-06-07
 ---
 
