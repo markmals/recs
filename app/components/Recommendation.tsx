@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Form, Link, useLoaderData } from "react-router";
+import { Image } from "@unpic/react";
 import type { HydratedRec } from "~/lib/data";
 import { Star } from "./Star";
 import { Token } from "./Token";
@@ -32,9 +33,12 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
             id={slug}
         >
             {!!image && (
-                <img
+                <Image
                     alt=""
                     className="aspect-[5/4] max-h-80 border-2 border-black object-cover shadow-hard sm:aspect-[2/3]"
+                    layout="constrained"
+                    width={300}
+                    height={240}
                     src={image}
                 />
             )}
