@@ -1,38 +1,52 @@
-import { Form, useLoaderData, useNavigate, useSearchParams } from "react-router";
 import { useEffect } from "react";
-import { Input } from "../Input";
+import { Form, useLoaderData, useNavigate, useSubmit } from "react-router";
 import type { Route } from "../../routes/_index/+types/route";
+import { Input } from "../Input";
+
+// const navigation = useNavigation()
+// const { contacts, q } = loaderData
+
+// const searching = Boolean(
+//     navigation.location && new URLSearchParams(navigation.location.search).has("q"),
+// )
+
+// const submit = useSubmit()
+// const navigate = useNavigate()
 
 export function Search() {
     const { stars, query } = useLoaderData() as Route.ComponentProps["loaderData"];
-    const [searchParams] = useSearchParams();
+    // const navigation = useNavigation();
+    // const searching = Boolean(
+    //     navigation.location && new URLSearchParams(navigation.location.search).has("q"),
+    // );
+
+    const submit = useSubmit();
     const navigate = useNavigate();
 
     useEffect(() => {
         if (document) {
-            const input = document.querySelector<HTMLInputElement>("#q");
-            if (input) {
-                input.value = query ?? "";
-            }
+            document.querySelector<HTMLInputElement>("#q")!.value = query ?? "";
         }
     }, [query]);
 
     return (
         <Form className="px-4 pb-8" method="get">
-            {stars !== null && <input type="hidden" name="stars" value={stars} />}
+            {stars !== null && <input name="stars" type="hidden" value={stars} />}
             <Input
                 aria-label="Search recommendations"
                 defaultValue={query ?? ""}
                 id="q"
                 name="q"
                 onInput={(event) => {
-                    const params = new URLSearchParams(searchParams);
+                    // Remove empty query params when value is empty
                     if (!event.currentTarget.value) {
-                        params.delete("q");
-                    } else {
-                        params.set("q", event.currentTarget.value);
+                        navigate("/");
+                        return;
                     }
-                    navigate(`?${params.toString()}`, { replace: query !== null });
+                    const isFirstSearch = query === undefined;
+                    submit(event.currentTarget.form, {
+                        replace: !isFirstSearch,
+                    });
                 }}
                 placeholder="Search..."
                 type="search"
