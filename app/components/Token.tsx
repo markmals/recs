@@ -61,10 +61,10 @@ export namespace TokenButton {
         };
 }
 
-export function TokenButton(props: TokenButton.Props) {
+export function TokenButton({ className: cn, ...props }: TokenButton.Props) {
     const children = props.label || props.children;
     return (
-        <button className={token({ type: "button" })} type="submit" {...props}>
+        <button className={token({ type: "button", className: cn })} type="submit" {...props}>
             {children}
             {/* {icon} */}
         </button>
