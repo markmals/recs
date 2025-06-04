@@ -40,6 +40,7 @@
         "isbot": "npm:isbot@^5.1.23",
         "marked": "npm:marked@^15.0.7",
         "motion": "npm:motion@^12.4.10",
+        "fuse.js": "npm:fuse.js@^6.6.2",
         "react": "npm:react@^19.1.0",
         "react-aria-components": "npm:react-aria-components@^1.7.0",
         "react-dom": "npm:react-dom@^19.1.0",

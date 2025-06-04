@@ -1,11 +1,16 @@
 import { ArrowPathIcon, ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import { AnimatePresence, motion } from "motion/react";
-import { isRouteErrorResponse, useNavigate } from "react-router";
+import {
+    isRouteErrorResponse,
+    useNavigate,
+    useSearchParams,
+} from "react-router";
+import { useMemo } from "react";
 import { Recommendation } from "~/components/Recommendation";
 import { Filters } from "~/components/filters/Filters";
 import { getCollection } from "~/lib/content";
 import { stores } from "~/lib/stores.client";
-import { filterRecs, Stars } from "./utilities";
+import { filterRecs, Stars, Query } from "./utilities";
 import type { Route } from "./+types/route";
 import { TokenButton } from "../../components/Token";
 
@@ -17,6 +22,7 @@ export async function loader({ request }: Route.LoaderArgs) {
     }
 
     const stars = new Stars(request);
+    const query = new Query(request);
     const recs = collection.map((recommendation) => ({
         ...recommendation.data,
         slug: recommendation.slug as string,
@@ -25,10 +31,12 @@ export async function loader({ request }: Route.LoaderArgs) {
 
     return {
         stars: stars.count,
+        query: query.value,
         recs,
         filteredRecs: filterRecs({
             recs,
-            stars,
+            stars: stars.count,
+            query: query.value,
         }),
     };
 }
@@ -38,13 +46,19 @@ const CACHE_KEY = "recommendations";
 
 export async function clientLoader({ request, serverLoader }: Route.ClientLoaderArgs) {
     const stars = new Stars(request);
+    const query = new Query(request);
 
     async function fetchData() {
         const { recs } = await serverLoader();
         await stores.cache.set(CACHE_KEY, recs);
         return {
             stars: stars.count,
-            filteredRecs: filterRecs({ recs, stars }),
+            query: query.value,
+            filteredRecs: filterRecs({
+                recs,
+                stars: stars.count,
+                query: query.value,
+            }),
         };
     }
 
@@ -53,7 +67,12 @@ export async function clientLoader({ request, serverLoader }: Route.ClientLoader
         return cachedRecs
             ? {
                 stars: stars.count,
-                filteredRecs: filterRecs({ recs: cachedRecs, stars }),
+                query: query.value,
+                filteredRecs: filterRecs({
+                    recs: cachedRecs,
+                    stars: stars.count,
+                    query: query.value,
+                }),
             }
             : null;
     }
@@ -67,6 +86,19 @@ export async function clientLoader({ request, serverLoader }: Route.ClientLoader
 }
 
 export default function Component({ loaderData }: Route.ComponentProps) {
+    const [searchParams] = useSearchParams();
+    const query = searchParams.get("q");
+
+    const filteredRecs = useMemo(
+        () =>
+            filterRecs({
+                recs: loaderData.recs,
+                stars: loaderData.stars,
+                query,
+            }),
+        [loaderData.recs, loaderData.stars, query],
+    );
+
     return (
         <div className="noise-container p-6">
             <div className="noise" />
@@ -75,7 +107,7 @@ export default function Component({ loaderData }: Route.ComponentProps) {
             <div className="block sm:grid-cols-[3fr_2fr] lg:grid">
                 <div className="flex flex-col items-start gap-7 py-10">
                     <AnimatePresence>
-                        {loaderData.filteredRecs.map((rec) => (
+                        {filteredRecs.map((rec) => (
                             <motion.div className="w-full" key={rec.slug} layout>
                                 <Recommendation recommendation={rec} />
                             </motion.div>
