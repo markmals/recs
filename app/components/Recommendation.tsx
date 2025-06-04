@@ -83,7 +83,7 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
                     </div>
                     <Link
                         className="font-serif-text hover:text-amber-500 hover:underline dark:hover:text-purple-600"
-                        to={`#${slug}`}
+                        to={`/${slug}`}
                     >
                         {createdOn}
                     </Link>
