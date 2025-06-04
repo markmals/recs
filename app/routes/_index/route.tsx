@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { isRouteErrorResponse, useNavigate } from "react-router";
 import { Recommendation } from "~/components/Recommendation";
 import { Filters } from "~/components/filters/Filters";
+import { MobileFilters } from "~/components/filters/MobileFilters";
 import { getCollection } from "~/lib/content";
 import { stores } from "~/lib/stores.client";
 import { filterRecs, Stars } from "./utilities";
@@ -72,6 +73,9 @@ export default function Component({ loaderData }: Route.ComponentProps) {
             <div className="noise" />
             <div className="noise-underlay" />
             <h1 className="font-serif-display text-5xl font-bold sm:text-6xl">Recommendations</h1>
+            <div className="py-4 lg:hidden">
+                <MobileFilters />
+            </div>
             <div className="block sm:grid-cols-[3fr_2fr] lg:grid">
                 <div className="flex flex-col items-start gap-7 py-10">
                     <AnimatePresence>
