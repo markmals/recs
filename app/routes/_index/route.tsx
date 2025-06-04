@@ -5,7 +5,7 @@ import { Recommendation } from "~/components/Recommendation";
 import { Filters } from "~/components/filters/Filters";
 import { getCollection } from "~/lib/content";
 import { stores } from "~/lib/stores.client";
-import { filterRecs, Stars } from "./utilities";
+import { filterRecs, Stars, TagFilter } from "./utilities";
 import type { Route } from "./+types/route";
 import { TokenButton } from "../../components/Token";
 
@@ -17,18 +17,32 @@ export async function loader({ request }: Route.LoaderArgs) {
     }
 
     const stars = new Stars(request);
+    const tagFilter = new TagFilter(request);
     const recs = collection.map((recommendation) => ({
         ...recommendation.data,
         slug: recommendation.slug as string,
         description: recommendation.body,
     }));
 
+    const tags = Array.from(
+        new Set(
+            recs.flatMap((rec) =>
+                (rec.tags ?? [])
+                    .filter((tag) => !tag.link)
+                    .map((tag) => tag.name)
+            ),
+        ),
+    );
+
     return {
         stars: stars.count,
+        tag: tagFilter.name,
+        tags,
         recs,
         filteredRecs: filterRecs({
             recs,
             stars,
+            tag: tagFilter,
         }),
     };
 }
@@ -38,13 +52,16 @@ const CACHE_KEY = "recommendations";
 
 export async function clientLoader({ request, serverLoader }: Route.ClientLoaderArgs) {
     const stars = new Stars(request);
+    const tagFilter = new TagFilter(request);
 
     async function fetchData() {
-        const { recs } = await serverLoader();
+        const { recs, tags } = await serverLoader();
         await stores.cache.set(CACHE_KEY, recs);
         return {
             stars: stars.count,
-            filteredRecs: filterRecs({ recs, stars }),
+            tag: tagFilter.name,
+            tags,
+            filteredRecs: filterRecs({ recs, stars, tag: tagFilter }),
         };
     }
 
@@ -53,7 +70,17 @@ export async function clientLoader({ request, serverLoader }: Route.ClientLoader
         return cachedRecs
             ? {
                 stars: stars.count,
-                filteredRecs: filterRecs({ recs: cachedRecs, stars }),
+                tag: tagFilter.name,
+                tags: Array.from(
+                    new Set(
+                        cachedRecs.flatMap((rec) =>
+                            (rec.tags ?? [])
+                                .filter((tag) => !tag.link)
+                                .map((tag) => tag.name)
+                        ),
+                    ),
+                ),
+                filteredRecs: filterRecs({ recs: cachedRecs, stars, tag: tagFilter }),
             }
             : null;
     }
