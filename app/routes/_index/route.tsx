@@ -69,14 +69,16 @@ export async function clientLoader({ request, serverLoader }: Route.ClientLoader
 
 export default function Component({ loaderData }: Route.ComponentProps) {
     return (
-        <div className="noise-container p-6">
+        <div className="noise-container">
             <div className="noise" />
             <div className="noise-underlay" />
-            <h1 className="font-serif-display text-5xl font-bold sm:text-6xl">Recommendations</h1>
-            <div className="py-4 lg:hidden">
+            <header className="sticky top-0 z-20 flex items-center justify-between bg-[#f9ecdf] p-6 dark:bg-[#17191e]">
+                <h1 className="font-serif-display text-5xl font-bold sm:text-6xl">
+                    Recommendations
+                </h1>
                 <MobileFilters />
-            </div>
-            <div className="block sm:grid-cols-[3fr_2fr] lg:grid">
+            </header>
+            <div className="block p-6 sm:grid-cols-[3fr_2fr] lg:grid">
                 <div className="flex flex-col items-start gap-7 py-10">
                     <AnimatePresence>
                         {loaderData.filteredRecs.map((rec) => (
