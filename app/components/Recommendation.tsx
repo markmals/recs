@@ -28,7 +28,7 @@ export function Recommendation({ recommendation }: { recommendation: HydratedRec
 
     return (
         <div
-            className="flex min-h-[264px] flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 shadow-hard-lg sm:flex-row dark:bg-[#232326]"
+            className="mx-auto flex w-full max-w-[528px] min-h-[264px] flex-col items-start justify-center gap-5 rounded-xl border-2 border-black bg-[#FDFAF7] p-6 shadow-hard-lg sm:flex-row dark:bg-[#232326]"
             id={slug}
         >
             {!!image && (

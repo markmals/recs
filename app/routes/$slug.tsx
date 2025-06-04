@@ -1,5 +1,5 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
-import { isRouteErrorResponse, useNavigate } from "react-router";
+import { isRouteErrorResponse, Link, useNavigate } from "react-router";
 import { Recommendation } from "../components/Recommendation";
 import { getCollection } from "../lib/content";
 import { stores } from "../lib/stores.client";
@@ -78,7 +78,15 @@ export default function Component({ loaderData }: Route.ComponentProps) {
         <div className="noise-container p-6">
             <div className="noise" />
             <div className="noise-underlay" />
-            <Recommendation recommendation={loaderData.rec} />
+            <Link
+                to="/"
+                className="block pb-6 font-serif-display text-5xl font-bold hover:text-amber-500 dark:hover:text-purple-600 sm:text-6xl"
+            >
+                Recommendations
+            </Link>
+            <div className="flex justify-center">
+                <Recommendation recommendation={loaderData.rec} />
+            </div>
         </div>
     );
 }
