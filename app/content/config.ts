@@ -10,7 +10,7 @@ const recommendations = v.object({
             v.object({
                 name: v.string(),
                 link: v.optional(v.pipe(v.string(), v.url())),
-                // icon?: JSX.Element
+                icon: v.optional(v.string()),
             }),
         ),
     ),

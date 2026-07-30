@@ -7,6 +7,7 @@ tags:
     - name: Movie
     - name: Watch Now
       link: https://tv.apple.com/us/movie/challengers/umc.cmc.53cuz33n4e74ixj8whccj87oc
+      icon: PlayIcon
 createdOn: 2024-05-27
 ---
 

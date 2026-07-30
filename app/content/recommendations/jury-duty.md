@@ -7,6 +7,7 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.amazon.com/Jury-Duty-Season-1/dp/B0B8JM2BBS
+      icon: PlayIcon
 createdOn: 2023-04-30
 ---
 

@@ -7,6 +7,7 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.amcplus.com/pages/kevin-can-f-himself
+      icon: PlayIcon
 createdOn: 2023-06-22
 ---
 

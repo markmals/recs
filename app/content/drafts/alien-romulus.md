@@ -7,6 +7,7 @@ tags:
     - name: Movie
     - name: Watch Now
       link: https://tv.apple.com/us/movie/alien-romulus/umc.cmc.p2ev2kz5funesqe6zset1oa7
+      icon: PlayIcon
 createdOn: 2024-08-17
 ---
 

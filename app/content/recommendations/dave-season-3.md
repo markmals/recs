@@ -7,6 +7,7 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.hulu.com/series/dave-ac3a96f0-9614-46af-b524-f59c7d281946
+      icon: PlayIcon
 createdOn: 2023-05-31
 ---
 

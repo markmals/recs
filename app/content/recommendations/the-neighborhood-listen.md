@@ -7,6 +7,7 @@ tags:
     - name: Podcast
     - name: Listen Now
       link: https://podcasts.apple.com/us/podcast/the-mysterious-prank-calls-with-drew-tarver/id1517151870?i=1000555414658
+      icon: SpeakerWaveIcon
 createdOn: 2021-08-22
 ---
 

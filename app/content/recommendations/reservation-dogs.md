@@ -7,6 +7,7 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.hulu.com/series/reservation-dogs-5a310c23-e2db-4c9f-a66c-27c2fee43d92
+      icon: PlayIcon
 createdOn: 2023-09-27
 ---
 

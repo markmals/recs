@@ -8,6 +8,7 @@ tags:
     - name: Austin
     - name: Menu
       link: https://www.distatantrelativesatx.com/menu
+      icon: DocumentTextIcon
 createdOn: 2023-08-27
 ---
 

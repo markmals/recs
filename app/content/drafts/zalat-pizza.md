@@ -8,5 +8,6 @@ tags:
     - name: Austin, Houston, DFW
     - name: Menu
       link: https://order.zalatpizza.com/
+      icon: DocumentTextIcon
 createdOn: 2024-06-10
 ---

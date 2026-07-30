@@ -8,6 +8,7 @@ tags:
     - name: Austin
     - name: Menu
       link: https://veracruzfonda.com/food-menu
+      icon: DocumentTextIcon
 createdOn: 2023-07-01
 ---
 

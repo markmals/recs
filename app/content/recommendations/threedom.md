@@ -7,6 +7,7 @@ tags:
     - name: Podcast
     - name: Listen Now
       link: https://podcasts.apple.com/au/podcast/threedom/id1437002676
+      icon: SpeakerWaveIcon
 createdOn: 2023-06-29
 ---
 

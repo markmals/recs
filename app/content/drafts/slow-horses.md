@@ -7,5 +7,6 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://tv.apple.com/us/show/slow-horses/umc.cmc.2szz3fdt71tl1ulnbp8utgq5o
+      icon: PlayIcon
 createdOn: 2025-01-11
 ---

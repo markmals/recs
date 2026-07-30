@@ -7,5 +7,6 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.dropout.tv/gastronauts
+      icon: PlayIcon
 createdOn: 2024-11-08
 ---

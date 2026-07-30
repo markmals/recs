@@ -8,6 +8,7 @@ tags:
     - name: Austin
     - name: Menu
       link: https://www.esteatx.com/menus/
+      icon: DocumentTextIcon
 createdOn: 2023-06-05
 ---
 

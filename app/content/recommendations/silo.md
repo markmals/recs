@@ -7,6 +7,7 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://tv.apple.com/us/show/silo/umc.cmc.3yksgc857px0k0rqe5zd4jice
+      icon: PlayIcon
 createdOn: 2023-06-18
 ---
 

@@ -7,5 +7,6 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.hulu.com/series/the-americans-6deba130-65fb-4816-acb1-aea5eb940f0f
+      icon: PlayIcon
 createdOn: 2024-02-03
 ---

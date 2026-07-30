@@ -7,6 +7,7 @@ tags:
     - name: Podcast
     - name: Listen Now
       link: https://podcasts.apple.com/us/podcast/i-said-no-gifts/id1499562159
+      icon: SpeakerWaveIcon
 createdOn: 2023-05-25
 ---
 

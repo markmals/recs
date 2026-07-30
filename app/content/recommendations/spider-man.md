@@ -7,6 +7,7 @@ tags:
     - name: Video Game
     - name: Play Now
       link: https://store.steampowered.com/app/1817070/Marvels_SpiderMan_Remastered/
+      icon: PlayIcon
 createdOn: 2022-09-10
 ---
 

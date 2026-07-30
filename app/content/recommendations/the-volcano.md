@@ -7,6 +7,7 @@ tags:
     - name: Movie
     - name: Watch Now
       link: https://www.netflix.com/title/81410405
+      icon: PlayIcon
 createdOn: 2023-05-29
 ---
 

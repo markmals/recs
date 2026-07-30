@@ -7,5 +7,6 @@ tags:
     - name: TV Show
     - name: Watch Now
       link: https://www.max.com/shows/leftovers/ce812085-7871-413f-8ceb-8c423f853427
+      icon: PlayIcon
 createdOn: 2025-01-22
 ---
